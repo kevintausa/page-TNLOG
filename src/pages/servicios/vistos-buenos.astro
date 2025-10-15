@@ -1,0 +1,48 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const serviceData = {
+  title: "Trámite de Vistos Buenos",
+  description: "Gestionamos permisos, licencias y vistos buenos ante autoridades competentes y gubernamentales, asegurando el cumplimiento normativo de cada operación",
+  icon: '<svg class="w-12 h-12 text-tn-blue" fill="currentColor" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>',
+  heroImage: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+  benefits: [
+    "Gestión especializada ante entidades públicas y privadas",
+    "Conocimiento profundo de normatividad nacional e internacional",
+    "Reducción significativa de tiempos de aprobación",
+    "Minimización de riesgos de rechazo o demoras",
+    "Seguimiento personalizado de cada trámite",
+    "Asesoría en requisitos específicos por tipo de mercancía",
+    "Gestión de permisos sanitarios, fitosanitarios y técnicos",
+    "Soporte en auditorías y verificaciones gubernamentales"
+  ],
+  process: [
+    {
+      title: "Análisis de Requisitos",
+      description: "Identificamos todos los permisos y licencias necesarios según el tipo de mercancía y destino."
+    },
+    {
+      title: "Preparación Documental",
+      description: "Compilamos y preparamos toda la documentación requerida para cada entidad."
+    },
+    {
+      title: "Presentación de Solicitudes",
+      description: "Radicamos las solicitudes ante las autoridades competentes siguiendo los procedimientos establecidos."
+    },
+    {
+      title: "Seguimiento Activo",
+      description: "Monitoreamos el estado de cada trámite y respondemos a requerimientos adicionales."
+    },
+    {
+      title: "Gestión de Observaciones",
+      description: "Atendemos observaciones y subsanamos cualquier requerimiento de las autoridades."
+    },
+    {
+      title: "Obtención y Entrega",
+      description: "Recibimos los vistos buenos aprobados y los entregamos listos para su uso."
+    }
+  ]
+};
+---
+
+<ServiceLayout {...serviceData} />

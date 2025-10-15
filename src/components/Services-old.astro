@@ -1,0 +1,660 @@
+---
+import { 
+  Compass, 
+  Truck, 
+  FileCheck, 
+  Settings, 
+  GraduationCap, 
+  MapPin,
+  ArrowRight 
+} from 'lucide-astro';
+import ServiceManager from './ServiceManager';
+---
+
+<section id="servicios" class="py-20 bg-gray-50 relative overflow-hidden">
+  <!-- Background decoration -->
+  <div class="absolute top-0 left-0 w-full h-full opacity-5">
+    <div class="absolute top-20 left-10 w-32 h-32 bg-tn-yellow rounded-full"></div>
+    <div class="absolute bottom-20 right-10 w-24 h-24 bg-tn-blue rounded-full"></div>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-tn-yellow rounded-full"></div>
+  </div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <!-- Section Header -->
+    <div class="text-center mb-16 animate-on-scroll">
+      <span class="inline-block bg-tn-blue text-white px-6 py-3 rounded-full font-intro-bold uppercase tracking-wider text-sm mb-6">
+        Nuestros Servicios
+      </span>
+      
+      <h2 class="text-4xl md:text-5xl font-intro-bold text-tn-blue mb-6 leading-tight">
+        Soluciones Integrales para tu 
+        <span class="text-tn-yellow">Éxito Internacional</span>
+      </h2>
+      
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        Ofrecemos un portafolio completo de servicios especializados en logística internacional, 
+        diseñados para impulsar el crecimiento de tu empresa en mercados globales.
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+      <!-- Service 1 -->
+      <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group animate-on-scroll stagger-item">
+        <div class="w-16 h-16 bg-gradient-to-br from-tn-blue to-tn-blue-dark rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <Compass class="w-8 h-8 text-tn-yellow" />
+        </div>
+        
+        <h3 class="text-xl font-intro-bold text-tn-blue mb-4">
+          Asesoría y Consultoría Logística
+        </h3>
+        
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          Diseñamos soluciones logísticas a la medida, acompañando en todas las etapas: diagnóstico integral, 
+          estructuración de rutas, optimización de tiempos y reducción de riesgos.
+        </p>
+        
+        <a 
+          href="/servicios/asesoria-consultoria" 
+          class="service-link flex items-center text-tn-yellow font-intro-bold group-hover:text-tn-blue transition-colors"
+          data-service="asesoria"
+        >
+          <span class="mr-2">Más información</span>
+          <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </a>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group animate-on-scroll stagger-item">
+        <div class="w-16 h-16 bg-gradient-to-br from-tn-blue to-tn-blue-dark rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <Truck class="w-8 h-8 text-tn-yellow" />
+        </div>
+        
+        <h3 class="text-xl font-intro-bold text-tn-blue mb-4">
+          Servicios Logísticos Integrales
+        </h3>
+        
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          Coordinamos la gestión operativa y documental para garantizar un flujo logístico eficiente: 
+          transporte internacional, seguimiento, trazabilidad y control de costos.
+        </p>
+        
+        <a 
+          href="/servicios/logistica-integral" 
+          class="service-link flex items-center text-tn-yellow font-intro-bold group-hover:text-tn-blue transition-colors"
+          data-service="logistica"
+        >
+          <span class="mr-2">Más información</span>
+          <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </a>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group animate-on-scroll stagger-item">
+        <div class="w-16 h-16 bg-gradient-to-br from-tn-blue to-tn-blue-dark rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <FileCheck class="w-8 h-8 text-tn-yellow" />
+        </div>
+        
+        <h3 class="text-xl font-intro-bold text-tn-blue mb-4">
+          Trámite de Vistos Buenos
+        </h3>
+        
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          Gestionamos permisos, licencias y vistos buenos ante autoridades competentes y gubernamentales, 
+          asegurando el cumplimiento normativo de cada operación.
+        </p>
+        
+        <a 
+          href="/servicios/vistos-buenos" 
+          class="service-link flex items-center text-tn-yellow font-intro-bold group-hover:text-tn-blue transition-colors"
+          data-service="vistos"
+        >
+          <span class="mr-2">Más información</span>
+          <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </a>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group animate-on-scroll stagger-item">
+        <div class="w-16 h-16 bg-gradient-to-br from-tn-blue to-tn-blue-dark rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <Settings class="w-8 h-8 text-tn-yellow" />
+        </div>
+        
+        <h3 class="text-xl font-intro-bold text-tn-blue mb-4">
+          Planeación Logística Integral
+        </h3>
+        
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          Acompañamiento completo desde la compra internacional hasta la nacionalización y entrega, 
+          logrando eficiencia, trazabilidad y reducción de tiempos.
+        </p>
+        
+        <a 
+          href="/servicios/planeacion-integral" 
+          class="service-link flex items-center text-tn-yellow font-intro-bold group-hover:text-tn-blue transition-colors"
+          data-service="planeacion"
+        >
+          <span class="mr-2">Más información</span>
+          <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </a>
+      </div>
+
+      <!-- Service 5 -->
+      <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group animate-on-scroll stagger-item">
+        <div class="w-16 h-16 bg-gradient-to-br from-tn-blue to-tn-blue-dark rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <GraduationCap class="w-8 h-8 text-tn-yellow" />
+        </div>
+        
+        <h3 class="text-xl font-intro-bold text-tn-blue mb-4">
+          Capacitaciones Personalizadas
+        </h3>
+        
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          Programas de formación en comercio exterior y logística internacional para emprendedores y PYMES: 
+          importaciones, exportaciones, normatividad aduanera y estrategias de internacionalización.
+        </p>
+        
+        <a 
+          href="/servicios/capacitaciones" 
+          class="service-link flex items-center text-tn-yellow font-intro-bold group-hover:text-tn-blue transition-colors"
+          data-service="capacitaciones"
+        >
+          <span class="mr-2">Más información</span>
+          <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </a>
+      </div>
+
+      <!-- Service 6 -->
+      <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group animate-on-scroll stagger-item">
+        <div class="w-16 h-16 bg-gradient-to-br from-tn-blue to-tn-blue-dark rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <MapPin class="w-8 h-8 text-tn-yellow" />
+        </div>
+        
+        <h3 class="text-xl font-intro-bold text-tn-blue mb-4">
+          Asistencia Comercial en China
+        </h3>
+        
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          Acompañamiento profesional en búsqueda, validación y negociación con proveedores asiáticos, 
+          incluyendo verificación de legalidad, inspecciones y control de calidad.
+        </p>
+        
+        <a 
+          href="/servicios/asistencia-china" 
+          class="service-link flex items-center text-tn-yellow font-intro-bold group-hover:text-tn-blue transition-colors"
+          data-service="china"
+        >
+          <span class="mr-2">Más información</span>
+          <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </a>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="text-center animate-on-scroll">
+      <div class="bg-gradient-to-r from-tn-blue to-tn-blue-dark rounded-3xl p-8 md:p-12 text-white">
+        <h3 class="text-3xl md:text-4xl font-intro-bold mb-4">
+          ¿Necesitas una solución personalizada?
+        </h3>
+        <p class="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+          Cada empresa es única. Trabajemos juntos para crear la estrategia logística 
+          perfecta para tus necesidades específicas.
+        </p>
+        <a 
+          href="#contacto" 
+          class="inline-block bg-tn-yellow hover:bg-tn-yellow-light text-tn-blue font-intro-bold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
+        >
+          Solicita tu Consulta Gratuita
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Service Manager with Framer Motion -->
+  <ServiceManager client:load />
+</section>
+
+<style>
+  /* Circle Reveal Transition - Framer Motion Style */
+  .circle-reveal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #2A3B70;
+    z-index: 10000;
+    clip-path: circle(0% at 50% 50%);
+    transition: clip-path 1.2s cubic-bezier(0.83, 0, 0.17, 1);
+    pointer-events: none;
+  }
+
+  .circle-reveal-overlay.expanding {
+    clip-path: circle(150% at 50% 50%);
+    pointer-events: all;
+  }
+
+  .circle-reveal-overlay.contracting {
+    clip-path: circle(0% at 50% 50%);
+  }
+
+  /* Enhanced card expansion */
+  .service-card-expanding {
+    transform: scale(1.08) !important;
+    z-index: 100 !important;
+    position: relative !important;
+    box-shadow: 0 25px 50px -12px rgba(42, 59, 112, 0.4) !important;
+    transition: all 0.6s cubic-bezier(0.83, 0, 0.17, 1) !important;
+  }
+
+  .service-card-expanding::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(135deg, rgba(250, 203, 0, 0.2), rgba(42, 59, 112, 0.2));
+    border-radius: 2rem;
+    z-index: -1;
+    animation: pulseGlow 0.6s ease-out;
+  }
+
+  @keyframes pulseGlow {
+    0% {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.2);
+      opacity: 0;
+    }
+  }
+
+  /* Prevent scrolling during transition */
+  body.transitioning {
+    overflow: hidden;
+  }
+
+  /* Enhanced hover effects */
+  .group:hover .service-card-preview {
+    transform: scale(1.02);
+    box-shadow: 0 20px 40px -12px rgba(42, 59, 112, 0.3);
+  }
+
+  /* Service Modal Styles */
+  .service-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+  }
+
+  .service-modal.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .service-modal-content {
+    background: white;
+    border-radius: 2rem;
+    max-width: 4xl;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    transform: scale(0.8) translateY(50px);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+
+  .service-modal.active .service-modal-content {
+    transform: scale(1) translateY(0);
+  }
+
+  .service-modal-header {
+    background: linear-gradient(135deg, #2A3B70, #1e2a4a);
+    color: white;
+    padding: 3rem 2rem 2rem;
+    border-radius: 2rem 2rem 0 0;
+    text-align: center;
+    position: relative;
+  }
+
+  .service-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+
+  .service-modal-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+  }
+
+  .service-modal-body {
+    padding: 2rem;
+  }
+
+  .service-benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .service-benefit-item:hover {
+    background: #e2e8f0;
+    transform: translateX(0.5rem);
+  }
+
+  .service-process-step {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-process-step:hover {
+    border-color: #FACB00;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  }
+
+  .service-process-step::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: #FACB00;
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+  }
+
+  .service-process-step:hover::before {
+    transform: scaleY(1);
+  }
+</style>
+
+<script>
+  // Enhanced service link handling with React integration
+  document.addEventListener('DOMContentLoaded', () => {
+    const serviceLinks = document.querySelectorAll('.service-link');
+    
+    serviceLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        const serviceCard = link.closest('.group');
+        const serviceKey = link.getAttribute('data-service');
+        
+        if (serviceCard && serviceKey) {
+          // Dispatch custom event for React component
+          const event = new CustomEvent('openServiceModal', {
+            detail: {
+              serviceKey: serviceKey,
+              cardElement: serviceCard
+            }
+          });
+          
+          window.dispatchEvent(event);
+        }
+      });
+    });
+  });
+</script>
+      description: "Diseñamos soluciones logísticas a la medida, acompañando en todas las etapas desde la planeación hasta la entrega final con optimización de tiempos y reducción de riesgos",
+      benefits: [
+        "Diagnóstico logístico integral personalizado para tu empresa",
+        "Estructuración optimizada de rutas y modos de transporte",
+        "Análisis detallado de costos y reducción de gastos operativos",
+        "Acompañamiento especializado en procesos aduaneros",
+        "Optimización de tiempos de entrega y reducción de riesgos",
+        "Estrategias personalizadas según tu sector y necesidades"
+      ],
+      process: [
+        { title: "Diagnóstico Inicial", description: "Evaluamos tu operación actual, identificamos oportunidades de mejora y analizamos tus necesidades específicas." },
+        { title: "Diseño de Solución", description: "Desarrollamos una estrategia logística personalizada con rutas optimizadas y selección de proveedores." },
+        { title: "Implementación", description: "Ejecutamos la solución diseñada con acompañamiento continuo y gestión de todos los procesos." },
+        { title: "Monitoreo y Optimización", description: "Supervisamos el desempeño, realizamos ajustes necesarios y optimizamos continuamente los procesos." }
+      ]
+    },
+    logistica: {
+      title: "Servicios Logísticos Integrales",
+      description: "Coordinamos la gestión operativa y documental para garantizar un flujo logístico eficiente y seguro en transporte internacional",
+      benefits: [
+        "Coordinación completa de transporte internacional (marítimo, aéreo y terrestre)",
+        "Seguimiento en tiempo real y trazabilidad total de la carga",
+        "Protección integral y aseguramiento de mercancías",
+        "Control detallado de costos logísticos y optimización presupuestaria",
+        "Coordinación aduanera especializada y gestión documental",
+        "Red global de agentes y socios estratégicos"
+      ],
+      process: [
+        { title: "Planificación Logística", description: "Diseñamos la estrategia de transporte más eficiente según el tipo de carga y destino." },
+        { title: "Coordinación de Transporte", description: "Gestionamos el transporte multimodal coordinando todos los modos necesarios." },
+        { title: "Gestión Documental", description: "Preparamos y gestionamos toda la documentación requerida para el transporte internacional." },
+        { title: "Seguimiento y Trazabilidad", description: "Monitoreamos en tiempo real el estado y ubicación de tu carga durante todo el trayecto." }
+      ]
+    },
+    vistos: {
+      title: "Trámite de Vistos Buenos",
+      description: "Gestionamos permisos, licencias y vistos buenos ante autoridades competentes y gubernamentales, asegurando el cumplimiento normativo de cada operación",
+      benefits: [
+        "Gestión especializada ante entidades públicas y privadas",
+        "Conocimiento profundo de normatividad nacional e internacional",
+        "Reducción significativa de tiempos de aprobación",
+        "Minimización de riesgos de rechazo o demoras",
+        "Seguimiento personalizado de cada trámite",
+        "Asesoría en requisitos específicos por tipo de mercancía"
+      ],
+      process: [
+        { title: "Análisis de Requisitos", description: "Identificamos todos los permisos y licencias necesarios según el tipo de mercancía y destino." },
+        { title: "Preparación Documental", description: "Compilamos y preparamos toda la documentación requerida para cada entidad." },
+        { title: "Presentación de Solicitudes", description: "Radicamos las solicitudes ante las autoridades competentes siguiendo los procedimientos establecidos." },
+        { title: "Seguimiento Activo", description: "Monitoreamos el estado de cada trámite y respondemos a requerimientos adicionales." }
+      ]
+    },
+    planeacion: {
+      title: "Planeación Logística Integral",
+      description: "Acompañamiento completo desde la compra internacional hasta la nacionalización y entrega, logrando eficiencia, trazabilidad y reducción de tiempos",
+      benefits: [
+        "Planificación integral desde la compra hasta la entrega final",
+        "Ejecución y control completo de la cadena logística",
+        "Coordinación con proveedores internacionales",
+        "Gestión de nacionalización y procesos aduaneros",
+        "Optimización de tiempos y reducción de costos",
+        "Trazabilidad completa en cada etapa del proceso"
+      ],
+      process: [
+        { title: "Planificación Estratégica", description: "Desarrollamos un plan integral que abarca desde la compra hasta la entrega final." },
+        { title: "Coordinación de Compras", description: "Gestionamos la coordinación con proveedores internacionales y negociación de términos." },
+        { title: "Gestión de Transporte", description: "Coordinamos el transporte internacional más eficiente según las características de la carga." },
+        { title: "Proceso de Nacionalización", description: "Gestionamos todos los trámites aduaneros y documentales para la nacionalización." }
+      ]
+    },
+    capacitaciones: {
+      title: "Capacitaciones Personalizadas",
+      description: "Programas de formación en comercio exterior y logística internacional para emprendedores y PYMES con enfoque práctico",
+      benefits: [
+        "Programas especializados en importaciones y exportaciones",
+        "Formación en normatividad aduanera y documental",
+        "Capacitación en gestión logística integral",
+        "Estrategias prácticas de internacionalización",
+        "Metodología adaptada a emprendedores y PYMES",
+        "Instructores con experiencia real en comercio exterior"
+      ],
+      process: [
+        { title: "Diagnóstico de Necesidades", description: "Evaluamos las necesidades específicas de capacitación de tu empresa o equipo." },
+        { title: "Diseño del Programa", description: "Desarrollamos un programa personalizado con contenidos relevantes para tu sector." },
+        { title: "Modalidad de Entrega", description: "Definimos la modalidad más conveniente: presencial, virtual o mixta." },
+        { title: "Ejecución del Programa", description: "Impartimos las capacitaciones con metodología práctica y casos reales." }
+      ]
+    },
+    china: {
+      title: "Asistencia Comercial en China",
+      description: "Acompañamiento profesional en búsqueda, validación y negociación con proveedores asiáticos, incluyendo verificación de legalidad, inspecciones y control de calidad",
+      benefits: [
+        "Búsqueda especializada de proveedores confiables en China",
+        "Verificación completa de legalidad y credenciales empresariales",
+        "Revisión exhaustiva de documentación comercial",
+        "Coordinación de inspecciones y auditorías in-situ",
+        "Control de calidad riguroso antes del embarque",
+        "Apoyo logístico en consolidación y envío de mercancías"
+      ],
+      process: [
+        { title: "Identificación de Proveedores", description: "Búsqueda y preselección de proveedores potenciales según tus especificaciones." },
+        { title: "Verificación y Validación", description: "Verificamos la legalidad, capacidad productiva y credenciales de los proveedores." },
+        { title: "Negociación Comercial", description: "Gestionamos las negociaciones comerciales considerando aspectos culturales y técnicos." },
+        { title: "Inspección y Auditoría", description: "Coordinamos inspecciones in-situ y auditorías de calidad en las instalaciones." }
+      ]
+    }
+  };
+
+  // Show service modal function
+  function showServiceModal(serviceKey) {
+    const service = servicesData[serviceKey];
+    if (!service) return;
+
+    // Create modal HTML
+    const modalHTML = `
+      <div class="service-modal" id="serviceModal">
+        <div class="service-modal-content">
+          <div class="service-modal-header">
+            <button class="service-modal-close" onclick="closeServiceModal()">
+              <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+              </svg>
+            </button>
+            <h2 class="text-3xl md:text-4xl font-intro-bold mb-4">${service.title}</h2>
+            <p class="text-xl opacity-90">${service.description}</p>
+          </div>
+          
+          <div class="service-modal-body">
+            <!-- Benefits Section -->
+            <div class="mb-8">
+              <h3 class="text-2xl font-intro-bold text-tn-blue mb-6">Beneficios de nuestro servicio</h3>
+              <div class="space-y-3">
+                ${service.benefits.map(benefit => `
+                  <div class="service-benefit-item">
+                    <svg class="w-6 h-6 text-tn-yellow flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                    <p class="text-gray-700 leading-relaxed">${benefit}</p>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+
+            <!-- Process Section -->
+            <div class="mb-8">
+              <h3 class="text-2xl font-intro-bold text-tn-blue mb-6">Nuestro proceso</h3>
+              <div class="grid md:grid-cols-2 gap-6">
+                ${service.process.map((step, index) => `
+                  <div class="service-process-step">
+                    <div class="flex items-center mb-3">
+                      <div class="w-8 h-8 bg-tn-yellow rounded-full flex items-center justify-center text-tn-blue font-intro-bold mr-3">
+                        ${index + 1}
+                      </div>
+                      <h4 class="text-lg font-intro-bold text-tn-blue">${step.title}</h4>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">${step.description}</p>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="text-center bg-gradient-to-r from-tn-blue to-tn-blue-dark rounded-2xl p-8 text-white">
+              <h3 class="text-2xl font-intro-bold mb-4">¿Listo para optimizar tu logística?</h3>
+              <p class="text-lg mb-6 opacity-90">Contáctanos hoy y descubre cómo podemos transformar tus operaciones</p>
+              <a href="#contacto" onclick="closeServiceModal()" class="inline-block bg-tn-yellow hover:bg-tn-yellow-light text-tn-blue font-intro-bold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105">
+                Contactar ahora
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    // Add modal to body
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+    
+    // Show modal with animation
+    setTimeout(() => {
+      const modal = document.getElementById('serviceModal');
+      if (modal) {
+        modal.classList.add('active');
+      }
+    }, 100);
+  }
+
+  // Close service modal function
+  function closeServiceModal() {
+    const modal = document.getElementById('serviceModal');
+    if (modal) {
+      modal.classList.remove('active');
+      setTimeout(() => {
+        modal.remove();
+        // Clean up transition states
+        document.body.classList.remove('transitioning');
+        const overlays = document.querySelectorAll('.circle-reveal-overlay');
+        overlays.forEach(overlay => overlay.remove());
+        const cards = document.querySelectorAll('.service-card-expanding');
+        cards.forEach(card => card.classList.remove('service-card-expanding'));
+      }, 500);
+    }
+  }
+
+  // Make functions globally available
+  (window as any).showServiceModal = showServiceModal;
+  (window as any).closeServiceModal = closeServiceModal;
+
+  // Close modal on escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeServiceModal();
+    }
+  });
+
+  // Close modal on backdrop click
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    if (target && target.classList.contains('service-modal')) {
+      closeServiceModal();
+    }
+  });
+</script>

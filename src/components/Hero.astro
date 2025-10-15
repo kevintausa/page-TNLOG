@@ -2,8 +2,45 @@
 import { ArrowRight, Globe, Truck, Target } from 'lucide-astro';
 ---
 
-<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-tn-blue via-tn-blue-dark to-tn-blue">
-  <!-- Animated background pattern -->
+<section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-tn-blue via-tn-blue-dark to-tn-blue pt-20">
+  <!-- Dynamic background images -->
+  <div class="absolute inset-0 transition-all duration-1000 ease-in-out" id="bg-container">
+    <!-- Background image layers for each service -->
+    <!-- Asesoría y Consultoría Logística -->
+    <div class="bg-image active absolute inset-0 bg-cover bg-center bg-no-repeat opacity-45" 
+         style="background-image: url('/images/services/logistica-internacional.jpg')"
+         data-service="0"></div>
+    
+    <!-- Servicios Logísticos Integrales -->
+    <div class="bg-image absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0" 
+         style="background-image: url('/images/services/transporte-integral.jpg')"
+         data-service="1"></div>
+    
+    <!-- Trámite de Vistos Buenos -->
+    <div class="bg-image absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0" 
+         style="background-image: url('/images/services/documentos-permisos.jpg')"
+         data-service="2"></div>
+    
+    <!-- Planeación Logística Integral -->
+    <div class="bg-image absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0" 
+         style="background-image: url('/images/services/planeacion-logistica.jpg')"
+         data-service="3"></div>
+    
+    <!-- Capacitaciones Personalizadas -->
+    <div class="bg-image absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0" 
+         style="background-image: url('/images/services/capacitacion-empresarial.jpg')"
+         data-service="4"></div>
+    
+    <!-- Asistencia Comercial en China -->
+    <div class="bg-image absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0" 
+         style="background-image: url('/images/services/china-comercial.jpg')"
+         data-service="5"></div>
+    
+    <!-- Overlay gradient -->
+    <div class="absolute inset-0 bg-gradient-to-br from-tn-blue/40 via-tn-blue-dark/45 to-tn-blue/40"></div>
+  </div>
+
+  <!-- Animated pattern overlay -->
   <div class="absolute inset-0 opacity-10">
     <div class="parallax-bg absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23FACB00" fill-opacity="0.3"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
   </div>
@@ -20,36 +57,31 @@ import { ArrowRight, Globe, Truck, Target } from 'lucide-astro';
   </div>
 
   <div class="container mx-auto px-6 text-center relative z-10">
-    <!-- Logo -->
-    <div class="animate-fade-in mb-12">
-      <div class="logo-container inline-block transition-all duration-500 transform hover:scale-110">
-        <img 
-          src="/logo-tn-logistics.png" 
-          alt="TN Logistics Consulting" 
-          class="h-20 md:h-28 lg:h-32 w-auto mx-auto filter drop-shadow-lg hover:drop-shadow-2xl transition-all duration-300"
-        />
-      </div>
-    </div>
-
-    <!-- Main headline -->
+    <!-- Dynamic headline with rotating services -->
     <div class="animate-slide-up max-w-5xl mx-auto" style="animation-delay: 0.3s;">
       <h2 class="text-5xl md:text-7xl lg:text-8xl font-intro-bold text-white mb-4 leading-tight tracking-tight">
         <span class="block">Expandiendo</span>
         <span class="text-tn-yellow drop-shadow-lg">Horizontes</span>
       </h2>
-      <h3 class="text-2xl md:text-4xl lg:text-5xl font-intro text-white mb-10 opacity-95">
-        Conectando Oportunidades
-      </h3>
+      
+      <!-- Dynamic rotating service text -->
+      <div class="h-20 md:h-24 lg:h-28 flex items-center justify-center mb-6">
+        <h3 class="text-2xl md:text-4xl lg:text-5xl font-intro text-white opacity-95 text-center">
+          <span class="block mb-2">Especialistas en</span>
+          <span id="rotating-service" class="text-tn-yellow font-intro-bold drop-shadow-lg inline-block min-h-[1.2em]">
+            Logística Internacional
+          </span>
+        </h3>
+      </div>
+      
+      <!-- Service description that changes -->
+      <div class="h-16 md:h-20 flex items-center justify-center">
+        <p id="service-description" class="text-lg md:text-xl text-gray-200 leading-relaxed text-center max-w-3xl transition-all duration-500">
+          Conectamos tu empresa con oportunidades globales a través de soluciones logísticas integrales
+        </p>
+      </div>
     </div>
 
-    <!-- Subtitle -->
-    <div class="animate-slide-up max-w-2xl mx-auto mb-12" style="animation-delay: 0.6s;">
-      <p class="text-lg md:text-xl text-gray-200 leading-relaxed">
-        Somos tu aliado estratégico en logística internacional. 
-        Con más de 15 años de experiencia, simplificamos lo complejo 
-        y te acompañamos en cada etapa de tu crecimiento global.
-      </p>
-    </div>
 
     <!-- CTA Button -->
     <div class="animate-scale-in" style="animation-delay: 0.9s;">
@@ -114,4 +146,183 @@ import { ArrowRight, Globe, Truck, Target } from 'lucide-astro';
   .shadow-3xl {
     box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
   }
+
+  /* Background image transitions */
+  .bg-image {
+    transition: opacity 1.2s ease-in-out, transform 1.2s ease-in-out;
+    transform: scale(1.05);
+  }
+
+  .bg-image.active {
+    opacity: 0.45 !important;
+    transform: scale(1);
+  }
+
+  .bg-image.fade-out {
+    opacity: 0 !important;
+    transform: scale(1.1);
+  }
+
+  /* Parallax effect for backgrounds */
+  @keyframes backgroundFloat {
+    0%, 100% { transform: scale(1) translateY(0px); }
+    50% { transform: scale(1.02) translateY(-10px); }
+  }
+
+  .bg-image.active {
+    animation: backgroundFloat 20s ease-in-out infinite;
+  }
+
+  /* Text rotation animations */
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes slideOutUp {
+    from {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-30px) scale(0.95);
+    }
+  }
+
+  .slide-in {
+    animation: slideInUp 0.6s ease-out forwards;
+  }
+
+  .slide-out {
+    animation: slideOutUp 0.4s ease-in forwards;
+  }
+
+  /* Typing effect */
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes blink {
+    0%, 50% { border-color: transparent; }
+    51%, 100% { border-color: #FACB00; }
+  }
+
+  .typing-effect {
+    overflow: hidden;
+    border-right: 3px solid #FACB00;
+    white-space: nowrap;
+    animation: typing 2s steps(20) forwards, blink 1s infinite;
+  }
 </style>
+
+<script>
+  // Dynamic service rotation
+  const services = [
+    {
+      title: "Asesoría y Consultoría Logística",
+      description: "Diseñamos soluciones logísticas a la medida, desde la planeación hasta la entrega final con optimización de tiempos y reducción de riesgos"
+    },
+    {
+      title: "Servicios Logísticos Integrales",
+      description: "Coordinamos la gestión operativa y documental para garantizar un flujo logístico eficiente y seguro en transporte internacional"
+    },
+    {
+      title: "Trámite de Vistos Buenos",
+      description: "Gestionamos permisos, licencias y vistos buenos ante autoridades competentes, asegurando el cumplimiento normativo de cada operación"
+    },
+    {
+      title: "Planeación Logística Integral",
+      description: "Acompañamiento completo desde la compra internacional hasta la nacionalización, logrando eficiencia y trazabilidad total"
+    },
+    {
+      title: "Capacitaciones Personalizadas",
+      description: "Programas de formación en comercio exterior y logística internacional para emprendedores y PYMES con enfoque práctico"
+    },
+    {
+      title: "Asistencia Comercial en China",
+      description: "Acompañamiento profesional en búsqueda, validación y negociación con proveedores asiáticos, incluyendo control de calidad"
+    }
+  ];
+
+  let currentServiceIndex = 0;
+  const rotatingServiceElement = document.getElementById('rotating-service');
+  const serviceDescriptionElement = document.getElementById('service-description');
+  const backgroundImages = document.querySelectorAll('.bg-image');
+
+  function updateBackgroundImage(serviceIndex) {
+    // Remove active class from all backgrounds
+    backgroundImages.forEach((bg, index) => {
+      bg.classList.remove('active', 'fade-out');
+      if (index === serviceIndex) {
+        // Add active class to current service background
+        setTimeout(() => {
+          bg.classList.add('active');
+        }, 100);
+      } else {
+        // Add fade-out class to others
+        bg.classList.add('fade-out');
+      }
+    });
+  }
+
+  function updateService() {
+    if (!rotatingServiceElement || !serviceDescriptionElement) return;
+
+    const currentService = services[currentServiceIndex];
+    
+    // Update background image
+    updateBackgroundImage(currentServiceIndex);
+    
+    // Add exit animation
+    rotatingServiceElement.classList.add('slide-out');
+    serviceDescriptionElement.style.opacity = '0';
+    serviceDescriptionElement.style.transform = 'translateY(20px)';
+    
+    setTimeout(() => {
+      // Update content
+      rotatingServiceElement.textContent = currentService.title;
+      serviceDescriptionElement.textContent = currentService.description;
+      
+      // Remove exit animation and add enter animation
+      rotatingServiceElement.classList.remove('slide-out');
+      rotatingServiceElement.classList.add('slide-in');
+      
+      // Animate description
+      serviceDescriptionElement.style.opacity = '1';
+      serviceDescriptionElement.style.transform = 'translateY(0)';
+      
+      setTimeout(() => {
+        rotatingServiceElement.classList.remove('slide-in');
+      }, 600);
+      
+    }, 400);
+
+    // Move to next service
+    currentServiceIndex = (currentServiceIndex + 1) % services.length;
+  }
+
+  // Start rotation after initial load
+  setTimeout(() => {
+    updateService();
+    setInterval(updateService, 4000); // Change every 4 seconds
+  }, 3000); // Start after 3 seconds
+
+  // Add typing effect to initial service
+  document.addEventListener('DOMContentLoaded', () => {
+    if (rotatingServiceElement) {
+      rotatingServiceElement.classList.add('typing-effect');
+      setTimeout(() => {
+        rotatingServiceElement.classList.remove('typing-effect');
+        rotatingServiceElement.style.borderRight = 'none';
+      }, 2500);
+    }
+  });
+</script>

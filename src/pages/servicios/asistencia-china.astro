@@ -1,0 +1,48 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const serviceData = {
+  title: "Asistencia Comercial en China",
+  description: "Acompañamiento profesional en búsqueda, validación y negociación con proveedores asiáticos, incluyendo verificación de legalidad, inspecciones y control de calidad",
+  icon: '<svg class="w-12 h-12 text-tn-blue" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>',
+  heroImage: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+  benefits: [
+    "Búsqueda especializada de proveedores confiables en China",
+    "Verificación completa de legalidad y credenciales empresariales",
+    "Revisión exhaustiva de documentación comercial",
+    "Coordinación de inspecciones y auditorías in-situ",
+    "Control de calidad riguroso antes del embarque",
+    "Apoyo logístico en consolidación y envío de mercancías",
+    "Negociación cultural y comercial especializada",
+    "Red establecida de contactos y socios locales"
+  ],
+  process: [
+    {
+      title: "Identificación de Proveedores",
+      description: "Búsqueda y preselección de proveedores potenciales según tus especificaciones."
+    },
+    {
+      title: "Verificación y Validación",
+      description: "Verificamos la legalidad, capacidad productiva y credenciales de los proveedores."
+    },
+    {
+      title: "Negociación Comercial",
+      description: "Gestionamos las negociaciones comerciales considerando aspectos culturales y técnicos."
+    },
+    {
+      title: "Inspección y Auditoría",
+      description: "Coordinamos inspecciones in-situ y auditorías de calidad en las instalaciones."
+    },
+    {
+      title: "Control de Calidad",
+      description: "Supervisamos la producción y realizamos control de calidad antes del embarque."
+    },
+    {
+      title: "Logística y Embarque",
+      description: "Coordinamos la consolidación, documentación y embarque de las mercancías."
+    }
+  ]
+};
+---
+
+<ServiceLayout {...serviceData} />

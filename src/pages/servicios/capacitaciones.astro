@@ -1,0 +1,48 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const serviceData = {
+  title: "Capacitaciones Personalizadas",
+  description: "Programas de formación en comercio exterior y logística internacional para emprendedores y PYMES con enfoque práctico",
+  icon: '<svg class="w-12 h-12 text-tn-blue" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6L23 9l-11-6zM5 13.18l7 3.82 7-3.82V11L12 15 5 11v2.18z"/></svg>',
+  heroImage: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=2126&q=80",
+  benefits: [
+    "Programas especializados en importaciones y exportaciones",
+    "Formación en normatividad aduanera y documental",
+    "Capacitación en gestión logística integral",
+    "Estrategias prácticas de internacionalización",
+    "Metodología adaptada a emprendedores y PYMES",
+    "Instructores con experiencia real en comercio exterior",
+    "Certificaciones reconocidas en el sector",
+    "Seguimiento post-capacitación y asesoría continua"
+  ],
+  process: [
+    {
+      title: "Diagnóstico de Necesidades",
+      description: "Evaluamos las necesidades específicas de capacitación de tu empresa o equipo."
+    },
+    {
+      title: "Diseño del Programa",
+      description: "Desarrollamos un programa personalizado con contenidos relevantes para tu sector."
+    },
+    {
+      title: "Modalidad de Entrega",
+      description: "Definimos la modalidad más conveniente: presencial, virtual o mixta."
+    },
+    {
+      title: "Ejecución del Programa",
+      description: "Impartimos las capacitaciones con metodología práctica y casos reales."
+    },
+    {
+      title: "Evaluación y Certificación",
+      description: "Evaluamos el aprendizaje y otorgamos certificaciones correspondientes."
+    },
+    {
+      title: "Seguimiento Continuo",
+      description: "Proporcionamos seguimiento post-capacitación y asesoría para implementación."
+    }
+  ]
+};
+---
+
+<ServiceLayout {...serviceData} />

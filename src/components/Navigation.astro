@@ -1,0 +1,251 @@
+---
+import { Menu, X } from 'lucide-astro';
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200/50 transition-all duration-300" id="navbar">
+  <div class="container mx-auto px-6">
+    <div class="flex items-center justify-between h-16 md:h-20">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a href="#inicio" class="flex items-center group">
+          <img 
+            src="/logo-tn-logistics.png" 
+            alt="TN Logistics Consulting" 
+            class="h-12 md:h-16 w-auto transition-transform duration-300 group-hover:scale-105"
+          />
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a 
+          href="#inicio" 
+          class="nav-link text-tn-blue hover:text-tn-yellow font-intro-bold text-sm uppercase tracking-wider transition-all duration-300 relative group"
+        >
+          Inicio
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-tn-yellow transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        
+        <a 
+          href="#nosotros" 
+          class="nav-link text-tn-blue hover:text-tn-yellow font-intro-bold text-sm uppercase tracking-wider transition-all duration-300 relative group"
+        >
+          Nosotros
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-tn-yellow transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        
+        <a 
+          href="#mision" 
+          class="nav-link text-tn-blue hover:text-tn-yellow font-intro-bold text-sm uppercase tracking-wider transition-all duration-300 relative group"
+        >
+          Misión
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-tn-yellow transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        
+        <a 
+          href="#servicios" 
+          class="nav-link text-tn-blue hover:text-tn-yellow font-intro-bold text-sm uppercase tracking-wider transition-all duration-300 relative group"
+        >
+          Servicios
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-tn-yellow transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        
+        <a 
+          href="#por-que-elegirnos" 
+          class="nav-link text-tn-blue hover:text-tn-yellow font-intro-bold text-sm uppercase tracking-wider transition-all duration-300 relative group"
+        >
+          ¿Por qué elegirnos?
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-tn-yellow transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        
+        <a 
+          href="#contacto" 
+          class="bg-tn-yellow hover:bg-tn-yellow-light text-tn-blue font-intro-bold px-6 py-2 rounded-full text-sm uppercase tracking-wider transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
+        >
+          Contacto
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button 
+          id="mobile-menu-button"
+          class="text-tn-blue hover:text-tn-yellow transition-colors duration-300 p-2"
+          aria-label="Abrir menú"
+        >
+          <Menu class="w-6 h-6" id="menu-icon" />
+          <X class="w-6 h-6 hidden" id="close-icon" />
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div 
+      id="mobile-menu" 
+      class="md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md shadow-lg border-t border-gray-200/50 transform -translate-y-full opacity-0 invisible transition-all duration-300"
+    >
+      <div class="px-6 py-4 space-y-4">
+        <a 
+          href="#inicio" 
+          class="mobile-nav-link block text-tn-blue hover:text-tn-yellow font-intro-bold text-lg py-2 transition-colors duration-300"
+        >
+          Inicio
+        </a>
+        
+        <a 
+          href="#nosotros" 
+          class="mobile-nav-link block text-tn-blue hover:text-tn-yellow font-intro-bold text-lg py-2 transition-colors duration-300"
+        >
+          Nosotros
+        </a>
+        
+        <a 
+          href="#mision" 
+          class="mobile-nav-link block text-tn-blue hover:text-tn-yellow font-intro-bold text-lg py-2 transition-colors duration-300"
+        >
+          Misión
+        </a>
+        
+        <a 
+          href="#servicios" 
+          class="mobile-nav-link block text-tn-blue hover:text-tn-yellow font-intro-bold text-lg py-2 transition-colors duration-300"
+        >
+          Servicios
+        </a>
+        
+        <a 
+          href="#por-que-elegirnos" 
+          class="mobile-nav-link block text-tn-blue hover:text-tn-yellow font-intro-bold text-lg py-2 transition-colors duration-300"
+        >
+          ¿Por qué elegirnos?
+        </a>
+        
+        <a 
+          href="#contacto" 
+          class="mobile-nav-link block bg-tn-yellow hover:bg-tn-yellow-light text-tn-blue font-intro-bold px-6 py-3 rounded-full text-center transition-all duration-300 mt-4"
+        >
+          Contacto
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+  let isMenuOpen = false;
+
+  if (mobileMenuButton && mobileMenu && menuIcon && closeIcon) {
+    mobileMenuButton.addEventListener('click', () => {
+      isMenuOpen = !isMenuOpen;
+      
+      if (isMenuOpen) {
+        mobileMenu.classList.remove('-translate-y-full', 'opacity-0', 'invisible');
+        mobileMenu.classList.add('translate-y-0', 'opacity-100', 'visible');
+        menuIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+      } else {
+        mobileMenu.classList.add('-translate-y-full', 'opacity-0', 'invisible');
+        mobileMenu.classList.remove('translate-y-0', 'opacity-100', 'visible');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
+    });
+
+    // Close mobile menu when clicking on a link
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        isMenuOpen = false;
+        mobileMenu.classList.add('-translate-y-full', 'opacity-0', 'invisible');
+        mobileMenu.classList.remove('translate-y-0', 'opacity-100', 'visible');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      });
+    });
+  }
+
+  // Smooth scroll and active link highlighting
+  const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+  const navbar = document.getElementById('navbar');
+
+  // Navbar scroll effect
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar?.classList.add('bg-white/98', 'shadow-xl');
+      navbar?.classList.remove('bg-white/95');
+    } else {
+      navbar?.classList.remove('bg-white/98', 'shadow-xl');
+      navbar?.classList.add('bg-white/95');
+    }
+
+    // Highlight active section
+    const sections = ['inicio', 'nosotros', 'mision', 'servicios', 'por-que-elegirnos', 'contacto'];
+    let current = '';
+
+    sections.forEach(section => {
+      const element = document.getElementById(section);
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        if (rect.top <= 100 && rect.bottom >= 100) {
+          current = section;
+        }
+      }
+    });
+
+    // Update active link
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href')?.substring(1);
+      if (href === current) {
+        link.classList.add('text-tn-yellow');
+        link.classList.remove('text-tn-blue');
+      } else {
+        link.classList.remove('text-tn-yellow');
+        link.classList.add('text-tn-blue');
+      }
+    });
+  });
+
+  // Smooth scroll for navigation links
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href')?.substring(1);
+      const targetElement = document.getElementById(targetId || '');
+      
+      if (targetElement) {
+        const offsetTop = targetElement.offsetTop - 80; // Account for fixed navbar
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+</script>
+
+<style>
+  /* Ensure navbar appears above other elements */
+  nav {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* Smooth transitions for mobile menu */
+  #mobile-menu {
+    transform-origin: top;
+  }
+
+  /* Active link indicator */
+  .nav-link.active {
+    color: #FACB00;
+  }
+
+  .nav-link.active span {
+    width: 100%;
+  }
+</style>

@@ -22,14 +22,15 @@ const { title, description = "TN Logistics & Services S.A.S. - Expandiendo Horiz
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- GSAP CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   </head>
   <body class="font-intro antialiased">
     <slot />
     
     <script>
+      // Import GSAP from node_modules
+      import { gsap } from "gsap";
+      import { ScrollTrigger } from "gsap/ScrollTrigger";
+      
       // Initialize GSAP
       gsap.registerPlugin(ScrollTrigger);
       

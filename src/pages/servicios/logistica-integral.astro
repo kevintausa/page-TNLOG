@@ -1,0 +1,48 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const serviceData = {
+  title: "Servicios Logísticos Integrales",
+  description: "Coordinamos la gestión operativa y documental para garantizar un flujo logístico eficiente y seguro en transporte internacional",
+  icon: '<svg class="w-12 h-12 text-tn-blue" fill="currentColor" viewBox="0 0 24 24"><path d="M19 7h-3V6a4 4 0 0 0-8 0v1H5a1 1 0 0 0-1 1v11a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V8a1 1 0 0 0-1-1zM10 6a2 2 0 0 1 4 0v1h-4V6zm8 13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V9h2v1a1 1 0 0 0 2 0V9h4v1a1 1 0 0 0 2 0V9h2v10z"/></svg>',
+  heroImage: "https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+  benefits: [
+    "Coordinación completa de transporte internacional (marítimo, aéreo y terrestre)",
+    "Seguimiento en tiempo real y trazabilidad total de la carga",
+    "Protección integral y aseguramiento de mercancías",
+    "Control detallado de costos logísticos y optimización presupuestaria",
+    "Coordinación aduanera especializada y gestión documental",
+    "Red global de agentes y socios estratégicos",
+    "Gestión de almacenamiento y distribución",
+    "Soporte 24/7 durante todo el proceso logístico"
+  ],
+  process: [
+    {
+      title: "Planificación Logística",
+      description: "Diseñamos la estrategia de transporte más eficiente según el tipo de carga y destino."
+    },
+    {
+      title: "Coordinación de Transporte",
+      description: "Gestionamos el transporte multimodal coordinando todos los modos necesarios."
+    },
+    {
+      title: "Gestión Documental",
+      description: "Preparamos y gestionamos toda la documentación requerida para el transporte internacional."
+    },
+    {
+      title: "Seguimiento y Trazabilidad",
+      description: "Monitoreamos en tiempo real el estado y ubicación de tu carga durante todo el trayecto."
+    },
+    {
+      title: "Gestión Aduanera",
+      description: "Coordinamos todos los procesos aduaneros en origen y destino para agilizar el despacho."
+    },
+    {
+      title: "Entrega Final",
+      description: "Coordinamos la entrega en destino final y proporcionamos confirmación de recepción."
+    }
+  ]
+};
+---
+
+<ServiceLayout {...serviceData} />

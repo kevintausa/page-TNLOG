@@ -1,8 +1,16 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
+import react from '@astrojs/react';
 
 export default defineConfig({
-  integrations: [tailwind()],
+  integrations: [tailwind(), react()],
   output: 'static',
-  site: 'https://tn-logistics.com'
+  site: 'https://tn-logistics.com',
+  vite: {
+    build: {
+      rollupOptions: {
+        external: [],
+      }
+    }
+  }
 });

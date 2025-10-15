@@ -1,0 +1,48 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+
+const serviceData = {
+  title: "Asesoría y Consultoría Logística",
+  description: "Diseñamos soluciones logísticas a la medida, acompañando en todas las etapas desde la planeación hasta la entrega final con optimización de tiempos y reducción de riesgos",
+  icon: '<svg class="w-12 h-12 text-tn-blue" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>',
+  heroImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+  benefits: [
+    "Diagnóstico logístico integral personalizado para tu empresa",
+    "Estructuración optimizada de rutas y modos de transporte",
+    "Análisis detallado de costos y reducción de gastos operativos",
+    "Acompañamiento especializado en procesos aduaneros",
+    "Optimización de tiempos de entrega y reducción de riesgos",
+    "Estrategias personalizadas según tu sector y necesidades",
+    "Monitoreo continuo y mejora de procesos logísticos",
+    "Acceso a red global de socios estratégicos"
+  ],
+  process: [
+    {
+      title: "Diagnóstico Inicial",
+      description: "Evaluamos tu operación actual, identificamos oportunidades de mejora y analizamos tus necesidades específicas."
+    },
+    {
+      title: "Diseño de Solución",
+      description: "Desarrollamos una estrategia logística personalizada con rutas optimizadas y selección de proveedores."
+    },
+    {
+      title: "Implementación",
+      description: "Ejecutamos la solución diseñada con acompañamiento continuo y gestión de todos los procesos."
+    },
+    {
+      title: "Monitoreo y Optimización",
+      description: "Supervisamos el desempeño, realizamos ajustes necesarios y optimizamos continuamente los procesos."
+    },
+    {
+      title: "Documentación y Cumplimiento",
+      description: "Gestionamos toda la documentación requerida y aseguramos el cumplimiento normativo."
+    },
+    {
+      title: "Entrega y Seguimiento",
+      description: "Coordinamos la entrega final y proporcionamos seguimiento post-entrega para garantizar la satisfacción."
+    }
+  ]
+};
+---
+
+<ServiceLayout {...serviceData} />

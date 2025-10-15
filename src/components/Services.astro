@@ -8,6 +8,7 @@ import {
   MapPin,
   ArrowRight 
 } from 'lucide-astro';
+import ServiceManagerSimple from './ServiceManagerSimple';
 ---
 
 <section id="servicios" class="py-20 bg-gray-50 relative overflow-hidden">
@@ -31,8 +32,8 @@ import {
       </h2>
       
       <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-        Ofrecemos un portafolio completo de servicios especializados en logística internacional, 
-        diseñados para impulsar el crecimiento de tu empresa en mercados globales.
+        Desde asesoría especializada hasta gestión completa de operaciones, 
+        te acompañamos en cada paso de tu expansión global.
       </p>
     </div>
 
@@ -45,18 +46,22 @@ import {
         </div>
         
         <h3 class="text-xl font-intro-bold text-tn-blue mb-4">
-          Asesoría y Consultoría en Operación Logística Internacional
+          Asesoría y Consultoría Logística
         </h3>
         
         <p class="text-gray-600 mb-6 leading-relaxed">
-          Análisis integral de procesos, optimización de rutas, selección de proveedores 
-          y estrategias personalizadas para maximizar la eficiencia de tus operaciones globales.
+          Diseñamos soluciones logísticas a la medida, acompañando en todas las etapas: diagnóstico integral, 
+          estructuración de rutas, optimización de tiempos y reducción de riesgos.
         </p>
         
-        <div class="flex items-center text-tn-yellow font-intro-bold group-hover:text-tn-blue transition-colors">
+        <a 
+          href="/servicios/asesoria-consultoria" 
+          class="service-link flex items-center text-tn-yellow font-intro-bold group-hover:text-tn-blue transition-colors"
+          data-service="asesoria"
+        >
           <span class="mr-2">Más información</span>
           <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-        </div>
+        </a>
       </div>
 
       <!-- Service 2 -->
@@ -70,14 +75,18 @@ import {
         </h3>
         
         <p class="text-gray-600 mb-6 leading-relaxed">
-          Gestión completa de la cadena de suministro, desde el origen hasta el destino final, 
-          incluyendo transporte multimodal, almacenamiento y distribución.
+          Coordinamos la gestión operativa y documental para garantizar un flujo logístico eficiente: 
+          transporte internacional, seguimiento, trazabilidad y control de costos.
         </p>
         
-        <div class="flex items-center text-tn-yellow font-intro-bold group-hover:text-tn-blue transition-colors">
+        <a 
+          href="/servicios/logistica-integral" 
+          class="service-link flex items-center text-tn-yellow font-intro-bold group-hover:text-tn-blue transition-colors"
+          data-service="logistica"
+        >
           <span class="mr-2">Más información</span>
           <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-        </div>
+        </a>
       </div>
 
       <!-- Service 3 -->
@@ -91,14 +100,18 @@ import {
         </h3>
         
         <p class="text-gray-600 mb-6 leading-relaxed">
-          Gestión especializada de permisos, licencias y autorizaciones requeridas 
-          para el comercio internacional, asegurando el cumplimiento normativo.
+          Gestionamos permisos, licencias y vistos buenos ante autoridades competentes y gubernamentales, 
+          asegurando el cumplimiento normativo de cada operación.
         </p>
         
-        <div class="flex items-center text-tn-yellow font-intro-bold group-hover:text-tn-blue transition-colors">
+        <a 
+          href="/servicios/vistos-buenos" 
+          class="service-link flex items-center text-tn-yellow font-intro-bold group-hover:text-tn-blue transition-colors"
+          data-service="vistos"
+        >
           <span class="mr-2">Más información</span>
           <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-        </div>
+        </a>
       </div>
 
       <!-- Service 4 -->
@@ -108,18 +121,22 @@ import {
         </div>
         
         <h3 class="text-xl font-intro-bold text-tn-blue mb-4">
-          Planeación y Desarrollo de la Operación Logística Integral
+          Planeación Logística Integral
         </h3>
         
         <p class="text-gray-600 mb-6 leading-relaxed">
-          Diseño e implementación de estrategias logísticas personalizadas, 
-          desde la conceptualización hasta la ejecución y monitoreo continuo.
+          Acompañamiento completo desde la compra internacional hasta la nacionalización y entrega, 
+          logrando eficiencia, trazabilidad y reducción de tiempos.
         </p>
         
-        <div class="flex items-center text-tn-yellow font-intro-bold group-hover:text-tn-blue transition-colors">
+        <a 
+          href="/servicios/planeacion-integral" 
+          class="service-link flex items-center text-tn-yellow font-intro-bold group-hover:text-tn-blue transition-colors"
+          data-service="planeacion"
+        >
           <span class="mr-2">Más información</span>
           <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-        </div>
+        </a>
       </div>
 
       <!-- Service 5 -->
@@ -129,18 +146,22 @@ import {
         </div>
         
         <h3 class="text-xl font-intro-bold text-tn-blue mb-4">
-          Capacitaciones y Cursos Personalizados
+          Capacitaciones Personalizadas
         </h3>
         
         <p class="text-gray-600 mb-6 leading-relaxed">
-          Programas de formación especializados en comercio exterior, logística internacional 
-          y mejores prácticas para fortalecer las competencias de tu equipo.
+          Programas de formación en comercio exterior y logística internacional para emprendedores y PYMES: 
+          importaciones, exportaciones, normatividad aduanera y estrategias de internacionalización.
         </p>
         
-        <div class="flex items-center text-tn-yellow font-intro-bold group-hover:text-tn-blue transition-colors">
+        <a 
+          href="/servicios/capacitaciones" 
+          class="service-link flex items-center text-tn-yellow font-intro-bold group-hover:text-tn-blue transition-colors"
+          data-service="capacitaciones"
+        >
           <span class="mr-2">Más información</span>
           <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-        </div>
+        </a>
       </div>
 
       <!-- Service 6 -->
@@ -154,14 +175,18 @@ import {
         </h3>
         
         <p class="text-gray-600 mb-6 leading-relaxed">
-          Acompañamiento especializado para operaciones comerciales en el mercado chino, 
-          incluyendo negociación, sourcing y gestión de proveedores locales.
+          Acompañamiento profesional en búsqueda, validación y negociación con proveedores asiáticos, 
+          incluyendo verificación de legalidad, inspecciones y control de calidad.
         </p>
         
-        <div class="flex items-center text-tn-yellow font-intro-bold group-hover:text-tn-blue transition-colors">
+        <a 
+          href="/servicios/asistencia-china" 
+          class="service-link flex items-center text-tn-yellow font-intro-bold group-hover:text-tn-blue transition-colors"
+          data-service="china"
+        >
           <span class="mr-2">Más información</span>
           <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-        </div>
+        </a>
       </div>
     </div>
 
@@ -184,4 +209,35 @@ import {
       </div>
     </div>
   </div>
+  
+  <!-- Service Manager with Framer Motion -->
+  <ServiceManagerSimple client:load />
 </section>
+
+<script>
+  // Enhanced service link handling with React integration
+  document.addEventListener('DOMContentLoaded', () => {
+    const serviceLinks = document.querySelectorAll('.service-link');
+    
+    serviceLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        const serviceCard = link.closest('.group');
+        const serviceKey = link.getAttribute('data-service');
+        
+        if (serviceCard && serviceKey) {
+          // Dispatch custom event for React component
+          const event = new CustomEvent('openServiceModal', {
+            detail: {
+              serviceKey: serviceKey,
+              cardElement: serviceCard
+            }
+          });
+          
+          window.dispatchEvent(event);
+        }
+      });
+    });
+  });
+</script>
