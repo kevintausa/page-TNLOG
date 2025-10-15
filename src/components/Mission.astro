@@ -1,0 +1,103 @@
+---
+import { Rocket, Target, Heart } from 'lucide-astro';
+---
+
+<section class="py-20 bg-gradient-to-r from-tn-yellow via-tn-yellow to-tn-yellow-light relative overflow-hidden">
+  <!-- Background pattern -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z" fill="%232A3B70" fill-opacity="0.1" fill-rule="evenodd"/%3E%3C/svg%3E')]"></div>
+  </div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="max-w-6xl mx-auto">
+      <!-- Section Header -->
+      <div class="text-center mb-16 animate-on-scroll">
+        <div class="inline-flex items-center gap-3 bg-tn-blue text-white px-6 py-3 rounded-full mb-6">
+          <Target class="w-5 h-5" />
+          <span class="font-intro-bold uppercase tracking-wider text-sm">Nuestra Misión</span>
+        </div>
+        
+        <h2 class="text-4xl md:text-5xl font-intro-bold text-tn-blue mb-6 leading-tight">
+          Impulsamos el Crecimiento de tu Empresa
+        </h2>
+      </div>
+
+      <!-- Mission Cards -->
+      <div class="grid md:grid-cols-3 gap-8 mb-16">
+        <!-- Mission -->
+        <div class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-on-scroll stagger-item">
+          <div class="w-16 h-16 bg-tn-blue rounded-2xl flex items-center justify-center mb-6">
+            <Rocket class="w-8 h-8 text-tn-yellow" />
+          </div>
+          <h3 class="text-2xl font-intro-bold text-tn-blue mb-4">Misión</h3>
+          <p class="text-gray-700 leading-relaxed">
+            Facilitar y optimizar los procesos de comercio internacional de nuestros clientes, 
+            brindando soluciones logísticas integrales, asesoría especializada y acompañamiento 
+            personalizado que les permita expandir sus operaciones globalmente de manera eficiente y segura.
+          </p>
+        </div>
+
+        <!-- Vision -->
+        <div class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-on-scroll stagger-item">
+          <div class="w-16 h-16 bg-tn-blue rounded-2xl flex items-center justify-center mb-6">
+            <Target class="w-8 h-8 text-tn-yellow" />
+          </div>
+          <h3 class="text-2xl font-intro-bold text-tn-blue mb-4">Visión</h3>
+          <p class="text-gray-700 leading-relaxed">
+            Ser reconocidos como la empresa líder en Colombia en servicios de logística internacional 
+            y consultoría comercial, destacándonos por nuestra innovación, excelencia operativa y 
+            compromiso con el crecimiento sostenible de nuestros clientes y la economía del país.
+          </p>
+        </div>
+
+        <!-- Values -->
+        <div class="bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 animate-on-scroll stagger-item">
+          <div class="w-16 h-16 bg-tn-blue rounded-2xl flex items-center justify-center mb-6">
+            <Heart class="w-8 h-8 text-tn-yellow" />
+          </div>
+          <h3 class="text-2xl font-intro-bold text-tn-blue mb-4">Valores</h3>
+          <div class="space-y-2 text-gray-700">
+            <div class="flex items-center gap-2">
+              <div class="w-2 h-2 bg-tn-yellow rounded-full"></div>
+              <span>Integridad y transparencia</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="w-2 h-2 bg-tn-yellow rounded-full"></div>
+              <span>Excelencia en el servicio</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="w-2 h-2 bg-tn-yellow rounded-full"></div>
+              <span>Innovación constante</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="w-2 h-2 bg-tn-yellow rounded-full"></div>
+              <span>Compromiso con el cliente</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="w-2 h-2 bg-tn-yellow rounded-full"></div>
+              <span>Responsabilidad social</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="text-center animate-on-scroll">
+        <div class="bg-tn-blue rounded-3xl p-8 md:p-12 text-white">
+          <h3 class="text-3xl md:text-4xl font-intro-bold mb-4">
+            ¿Listo para expandir tu negocio globalmente?
+          </h3>
+          <p class="text-xl mb-8 opacity-90">
+            Permítenos ser tu aliado estratégico en el camino hacia el éxito internacional
+          </p>
+          <a 
+            href="#contacto" 
+            class="inline-block bg-tn-yellow hover:bg-tn-yellow-light text-tn-blue font-intro-bold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
+          >
+            Comencemos Juntos
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

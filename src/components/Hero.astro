@@ -1,0 +1,117 @@
+---
+import { ArrowRight, Globe, Truck, Target } from 'lucide-astro';
+---
+
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-tn-blue via-tn-blue-dark to-tn-blue">
+  <!-- Animated background pattern -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="parallax-bg absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23FACB00" fill-opacity="0.3"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
+  </div>
+
+  <!-- Floating elements -->
+  <div class="absolute top-20 left-10 animate-bounce-in" style="animation-delay: 0.5s;">
+    <Globe class="w-8 h-8 text-tn-yellow opacity-60" />
+  </div>
+  <div class="absolute top-40 right-20 animate-bounce-in" style="animation-delay: 1s;">
+    <Truck class="w-10 h-10 text-tn-yellow opacity-60" />
+  </div>
+  <div class="absolute bottom-40 left-20 animate-bounce-in" style="animation-delay: 1.5s;">
+    <Target class="w-6 h-6 text-tn-yellow opacity-60" />
+  </div>
+
+  <div class="container mx-auto px-6 text-center relative z-10">
+    <!-- Logo -->
+    <div class="animate-fade-in mb-12">
+      <div class="logo-container inline-block transition-all duration-500 transform hover:scale-110">
+        <img 
+          src="/logo-tn-logistics.png" 
+          alt="TN Logistics Consulting" 
+          class="h-20 md:h-28 lg:h-32 w-auto mx-auto filter drop-shadow-lg hover:drop-shadow-2xl transition-all duration-300"
+        />
+      </div>
+    </div>
+
+    <!-- Main headline -->
+    <div class="animate-slide-up max-w-5xl mx-auto" style="animation-delay: 0.3s;">
+      <h2 class="text-5xl md:text-7xl lg:text-8xl font-intro-bold text-white mb-4 leading-tight tracking-tight">
+        <span class="block">Expandiendo</span>
+        <span class="text-tn-yellow drop-shadow-lg">Horizontes</span>
+      </h2>
+      <h3 class="text-2xl md:text-4xl lg:text-5xl font-intro text-white mb-10 opacity-95">
+        Conectando Oportunidades
+      </h3>
+    </div>
+
+    <!-- Subtitle -->
+    <div class="animate-slide-up max-w-2xl mx-auto mb-12" style="animation-delay: 0.6s;">
+      <p class="text-lg md:text-xl text-gray-200 leading-relaxed">
+        Somos tu aliado estratégico en logística internacional. 
+        Con más de 15 años de experiencia, simplificamos lo complejo 
+        y te acompañamos en cada etapa de tu crecimiento global.
+      </p>
+    </div>
+
+    <!-- CTA Button -->
+    <div class="animate-scale-in" style="animation-delay: 0.9s;">
+      <a 
+        href="#servicios" 
+        class="inline-flex items-center gap-3 bg-tn-yellow hover:bg-tn-yellow-light text-tn-blue font-intro-bold px-10 py-5 rounded-full text-lg md:text-xl transition-all duration-300 transform hover:scale-105 hover:shadow-2xl shadow-lg group relative overflow-hidden"
+      >
+        <span class="relative z-10">Conoce nuestros servicios</span>
+        <ArrowRight class="w-6 h-6 transition-transform group-hover:translate-x-1 relative z-10" />
+        
+        <!-- Button glow effect -->
+        <div class="absolute inset-0 bg-gradient-to-r from-tn-yellow-light to-tn-yellow opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      </a>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div class="w-6 h-10 border-2 border-tn-yellow rounded-full flex justify-center">
+        <div class="w-1 h-3 bg-tn-yellow rounded-full mt-2 animate-pulse"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gradient overlay -->
+  <div class="absolute inset-0 bg-gradient-to-t from-tn-blue-dark/20 to-transparent pointer-events-none"></div>
+</section>
+
+<style>
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Logo glow effect */
+  .logo-container {
+    position: relative;
+  }
+  
+  .logo-container::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #FACB00, #2A3B70, #FACB00);
+    border-radius: 1.5rem;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+  }
+  
+  .logo-container:hover::before {
+    opacity: 0.1;
+  }
+
+  /* Enhanced shadow */
+  .shadow-3xl {
+    box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
+  }
+</style>

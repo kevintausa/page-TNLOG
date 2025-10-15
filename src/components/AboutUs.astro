@@ -1,0 +1,96 @@
+---
+import { Building2, Users, Award, TrendingUp } from 'lucide-astro';
+---
+
+<section id="nosotros" class="py-20 bg-white relative overflow-hidden">
+  <!-- Background decoration -->
+  <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-gray-50 to-transparent opacity-50"></div>
+  
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <!-- Content -->
+      <div class="animate-on-scroll">
+        <div class="mb-6">
+          <span class="inline-block bg-tn-yellow text-tn-blue px-4 py-2 rounded-full text-sm font-intro-bold uppercase tracking-wider">
+            Quiénes Somos
+          </span>
+        </div>
+        
+        <h2 class="text-4xl md:text-5xl font-intro-bold text-tn-blue mb-6 leading-tight">
+          Tu Socio Estratégico en 
+          <span class="text-tn-yellow">Logística Internacional</span>
+        </h2>
+        
+        <div class="space-y-6 text-gray-700 text-lg leading-relaxed">
+          <p>
+            En <strong class="text-tn-blue">TN Logistics & Services S.A.S.</strong>, somos una empresa especializada 
+            en brindar soluciones integrales de logística internacional y consultoría comercial.
+          </p>
+          
+          <p>
+            Nuestro compromiso es acompañar a empresas de todos los tamaños en su proceso de 
+            internacionalización, ofreciendo servicios personalizados que se adaptan a las 
+            necesidades específicas de cada cliente.
+          </p>
+          
+          <p>
+            Con un enfoque centrado en la <strong class="text-tn-blue">excelencia operativa</strong> 
+            y la <strong class="text-tn-blue">innovación constante</strong>, hemos logrado posicionarnos 
+            como líderes en el sector, facilitando el comercio internacional y contribuyendo 
+            al crecimiento sostenible de nuestros clientes.
+          </p>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-2 gap-8 mt-12">
+          <div class="text-center animate-on-scroll">
+            <div class="text-3xl font-intro-bold text-tn-yellow mb-2">15+</div>
+            <div class="text-tn-blue font-intro">Años de Experiencia</div>
+          </div>
+          <div class="text-center animate-on-scroll">
+            <div class="text-3xl font-intro-bold text-tn-yellow mb-2">500+</div>
+            <div class="text-tn-blue font-intro">Clientes Satisfechos</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual Elements -->
+      <div class="animate-on-scroll">
+        <div class="relative">
+          <!-- Main card -->
+          <div class="bg-gradient-to-br from-tn-blue to-tn-blue-dark rounded-3xl p-8 text-white shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
+            <div class="grid grid-cols-2 gap-6">
+              <div class="text-center">
+                <Building2 class="w-12 h-12 text-tn-yellow mx-auto mb-4" />
+                <h4 class="font-intro-bold text-lg mb-2">Infraestructura Global</h4>
+                <p class="text-sm opacity-90">Red internacional de socios estratégicos</p>
+              </div>
+              
+              <div class="text-center">
+                <Users class="w-12 h-12 text-tn-yellow mx-auto mb-4" />
+                <h4 class="font-intro-bold text-lg mb-2">Equipo Experto</h4>
+                <p class="text-sm opacity-90">Profesionales certificados en comercio exterior</p>
+              </div>
+              
+              <div class="text-center">
+                <Award class="w-12 h-12 text-tn-yellow mx-auto mb-4" />
+                <h4 class="font-intro-bold text-lg mb-2">Calidad Certificada</h4>
+                <p class="text-sm opacity-90">Procesos avalados por estándares internacionales</p>
+              </div>
+              
+              <div class="text-center">
+                <TrendingUp class="w-12 h-12 text-tn-yellow mx-auto mb-4" />
+                <h4 class="font-intro-bold text-lg mb-2">Crecimiento Sostenido</h4>
+                <p class="text-sm opacity-90">Resultados comprobados año tras año</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating accent -->
+          <div class="absolute -top-4 -right-4 w-24 h-24 bg-tn-yellow rounded-full opacity-20 animate-pulse"></div>
+          <div class="absolute -bottom-6 -left-6 w-16 h-16 bg-tn-yellow rounded-full opacity-30 animate-bounce"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

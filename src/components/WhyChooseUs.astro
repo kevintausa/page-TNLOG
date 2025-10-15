@@ -1,0 +1,209 @@
+---
+import { 
+  CheckCircle, 
+  Users, 
+  Zap, 
+  Heart, 
+  TrendingUp,
+  Shield,
+  Clock,
+  Award
+} from 'lucide-astro';
+---
+
+<section class="py-20 bg-gradient-to-br from-tn-blue via-tn-blue-dark to-tn-blue relative overflow-hidden">
+  <!-- Background pattern -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="80" height="80" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23FACB00" fill-opacity="0.2"%3E%3Cpath d="M50 50c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zM10 10c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zM90 90c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
+  </div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <!-- Section Header -->
+    <div class="text-center mb-16 animate-on-scroll">
+      <span class="inline-block bg-tn-yellow text-tn-blue px-6 py-3 rounded-full font-intro-bold uppercase tracking-wider text-sm mb-6">
+        ¿Por qué elegirnos?
+      </span>
+      
+      <h2 class="text-4xl md:text-5xl font-intro-bold text-white mb-6 leading-tight">
+        Tu Aliado Estratégico de 
+        <span class="text-tn-yellow">Confianza</span>
+      </h2>
+      
+      <p class="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+        Más de 15 años de experiencia nos respaldan. Descubre por qué cientos de empresas 
+        confían en nosotros para expandir sus horizontes comerciales.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <!-- Left side - Benefits list -->
+      <div class="space-y-8">
+        <!-- Benefit 1 -->
+        <div class="flex items-start gap-4 animate-on-scroll stagger-item">
+          <div class="flex-shrink-0 w-12 h-12 bg-tn-yellow rounded-full flex items-center justify-center">
+            <Heart class="w-6 h-6 text-tn-blue" />
+          </div>
+          <div>
+            <h3 class="text-xl font-intro-bold text-white mb-2">
+              Nos convertimos en tu aliado estratégico
+            </h3>
+            <p class="text-gray-300 leading-relaxed">
+              No somos solo un proveedor, somos tu socio comprometido con el éxito de tu empresa. 
+              Trabajamos hombro a hombro contigo para alcanzar tus objetivos comerciales.
+            </p>
+          </div>
+        </div>
+
+        <!-- Benefit 2 -->
+        <div class="flex items-start gap-4 animate-on-scroll stagger-item">
+          <div class="flex-shrink-0 w-12 h-12 bg-tn-yellow rounded-full flex items-center justify-center">
+            <Award class="w-6 h-6 text-tn-blue" />
+          </div>
+          <div>
+            <h3 class="text-xl font-intro-bold text-white mb-2">
+              Más de 15 años de experiencia
+            </h3>
+            <p class="text-gray-300 leading-relaxed">
+              Nuestra trayectoria nos ha permitido desarrollar expertise en múltiples industrias 
+              y mercados, garantizando soluciones probadas y efectivas.
+            </p>
+          </div>
+        </div>
+
+        <!-- Benefit 3 -->
+        <div class="flex items-start gap-4 animate-on-scroll stagger-item">
+          <div class="flex-shrink-0 w-12 h-12 bg-tn-yellow rounded-full flex items-center justify-center">
+            <Zap class="w-6 h-6 text-tn-blue" />
+          </div>
+          <div>
+            <h3 class="text-xl font-intro-bold text-white mb-2">
+              Simplificamos lo complejo
+            </h3>
+            <p class="text-gray-300 leading-relaxed">
+              Convertimos procesos complicados en soluciones simples y eficientes. 
+              Nos encargamos de la complejidad para que tú te enfoques en hacer crecer tu negocio.
+            </p>
+          </div>
+        </div>
+
+        <!-- Benefit 4 -->
+        <div class="flex items-start gap-4 animate-on-scroll stagger-item">
+          <div class="flex-shrink-0 w-12 h-12 bg-tn-yellow rounded-full flex items-center justify-center">
+            <Shield class="w-6 h-6 text-tn-blue" />
+          </div>
+          <div>
+            <h3 class="text-xl font-intro-bold text-white mb-2">
+              Te acompañamos de principio a fin
+            </h3>
+            <p class="text-gray-300 leading-relaxed">
+              Desde la planificación inicial hasta la entrega final, estamos contigo en cada paso. 
+              Nuestro acompañamiento integral asegura el éxito de tus operaciones.
+            </p>
+          </div>
+        </div>
+
+        <!-- Benefit 5 -->
+        <div class="flex items-start gap-4 animate-on-scroll stagger-item">
+          <div class="flex-shrink-0 w-12 h-12 bg-tn-yellow rounded-full flex items-center justify-center">
+            <TrendingUp class="w-6 h-6 text-tn-blue" />
+          </div>
+          <div>
+            <h3 class="text-xl font-intro-bold text-white mb-2">
+              Crecemos contigo
+            </h3>
+            <p class="text-gray-300 leading-relaxed">
+              Nuestras soluciones se adaptan y escalan con tu empresa. A medida que creces, 
+              evolucionamos juntos para enfrentar nuevos desafíos y oportunidades.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right side - Stats and visual elements -->
+      <div class="animate-on-scroll">
+        <div class="relative">
+          <!-- Main stats card -->
+          <div class="bg-white rounded-3xl p-8 shadow-2xl">
+            <h3 class="text-2xl font-intro-bold text-tn-blue mb-8 text-center">
+              Resultados que Hablan por Sí Solos
+            </h3>
+            
+            <div class="grid grid-cols-2 gap-6">
+              <div class="text-center">
+                <div class="text-4xl font-intro-bold text-tn-yellow mb-2">500+</div>
+                <div class="text-tn-blue font-intro text-sm">Clientes Satisfechos</div>
+              </div>
+              
+              <div class="text-center">
+                <div class="text-4xl font-intro-bold text-tn-yellow mb-2">15+</div>
+                <div class="text-tn-blue font-intro text-sm">Años de Experiencia</div>
+              </div>
+              
+              <div class="text-center">
+                <div class="text-4xl font-intro-bold text-tn-yellow mb-2">50+</div>
+                <div class="text-tn-blue font-intro text-sm">Países Atendidos</div>
+              </div>
+              
+              <div class="text-center">
+                <div class="text-4xl font-intro-bold text-tn-yellow mb-2">99%</div>
+                <div class="text-tn-blue font-intro text-sm">Satisfacción Cliente</div>
+              </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="mt-8 pt-8 border-t border-gray-200">
+              <h4 class="text-lg font-intro-bold text-tn-blue mb-4 text-center">
+                Certificaciones y Reconocimientos
+              </h4>
+              <div class="flex justify-center items-center gap-4">
+                <div class="w-12 h-12 bg-tn-blue rounded-lg flex items-center justify-center">
+                  <CheckCircle class="w-6 h-6 text-tn-yellow" />
+                </div>
+                <div class="w-12 h-12 bg-tn-blue rounded-lg flex items-center justify-center">
+                  <Award class="w-6 h-6 text-tn-yellow" />
+                </div>
+                <div class="w-12 h-12 bg-tn-blue rounded-lg flex items-center justify-center">
+                  <Shield class="w-6 h-6 text-tn-yellow" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating elements -->
+          <div class="absolute -top-4 -right-4 w-20 h-20 bg-tn-yellow rounded-full opacity-20 animate-pulse"></div>
+          <div class="absolute -bottom-6 -left-6 w-16 h-16 bg-tn-yellow rounded-full opacity-30 animate-bounce"></div>
+        </div>
+
+        <!-- Additional benefits -->
+        <div class="mt-8 grid grid-cols-2 gap-4">
+          <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 text-center">
+            <Clock class="w-8 h-8 text-tn-yellow mx-auto mb-2" />
+            <div class="text-white font-intro-bold text-sm">Respuesta 24/7</div>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 text-center">
+            <Users class="w-8 h-8 text-tn-yellow mx-auto mb-2" />
+            <div class="text-white font-intro-bold text-sm">Equipo Especializado</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="text-center mt-16 animate-on-scroll">
+      <div class="bg-tn-yellow rounded-3xl p-8 md:p-12">
+        <h3 class="text-3xl md:text-4xl font-intro-bold text-tn-blue mb-4">
+          ¿Listo para ser parte de nuestros casos de éxito?
+        </h3>
+        <p class="text-xl text-tn-blue/80 mb-8 max-w-2xl mx-auto">
+          Únete a las empresas que ya confían en nosotros para expandir sus operaciones internacionales
+        </p>
+        <a 
+          href="#contacto" 
+          class="inline-block bg-tn-blue hover:bg-tn-blue-dark text-white font-intro-bold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
+        >
+          Comienza tu Transformación
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

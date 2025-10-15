@@ -1,0 +1,52 @@
+---
+interface Props {
+  size?: 'sm' | 'md' | 'lg';
+  variant?: 'light' | 'dark';
+  showText?: boolean;
+}
+
+const { 
+  size = 'md', 
+  variant = 'light',
+  showText = false 
+} = Astro.props;
+
+const sizeClasses = {
+  sm: 'h-8',
+  md: 'h-12', 
+  lg: 'h-16 md:h-20'
+};
+
+const textSizeClasses = {
+  sm: 'text-lg',
+  md: 'text-2xl',
+  lg: 'text-3xl md:text-4xl'
+};
+
+const textColor = variant === 'light' ? 'text-tn-blue' : 'text-white';
+---
+
+<div class="flex items-center gap-3">
+  <!-- Try to load PNG logo first, fallback to text -->
+  <img 
+    src="/logo-tn-logistics.png" 
+    alt="TN Logistics Consulting" 
+    class={`${sizeClasses[size]} w-auto`}
+    onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+  />
+  
+  <!-- Fallback text logo (hidden by default) -->
+  <div class="hidden">
+    <h1 class={`${textSizeClasses[size]} font-intro-bold ${textColor} leading-tight`}>
+      TN Logistics
+      {showText && <span class="block text-sm font-intro opacity-80">Consulting</span>}
+    </h1>
+  </div>
+</div>
+
+<style>
+  /* Ensure smooth fallback */
+  img {
+    transition: opacity 0.3s ease;
+  }
+</style>

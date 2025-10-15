@@ -1,0 +1,187 @@
+---
+import { 
+  Compass, 
+  Truck, 
+  FileCheck, 
+  Settings, 
+  GraduationCap, 
+  MapPin,
+  ArrowRight 
+} from 'lucide-astro';
+---
+
+<section id="servicios" class="py-20 bg-gray-50 relative overflow-hidden">
+  <!-- Background decoration -->
+  <div class="absolute top-0 left-0 w-full h-full opacity-5">
+    <div class="absolute top-20 left-10 w-32 h-32 bg-tn-yellow rounded-full"></div>
+    <div class="absolute bottom-20 right-10 w-24 h-24 bg-tn-blue rounded-full"></div>
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-tn-yellow rounded-full"></div>
+  </div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <!-- Section Header -->
+    <div class="text-center mb-16 animate-on-scroll">
+      <span class="inline-block bg-tn-blue text-white px-6 py-3 rounded-full font-intro-bold uppercase tracking-wider text-sm mb-6">
+        Nuestros Servicios
+      </span>
+      
+      <h2 class="text-4xl md:text-5xl font-intro-bold text-tn-blue mb-6 leading-tight">
+        Soluciones Integrales para tu 
+        <span class="text-tn-yellow">Éxito Internacional</span>
+      </h2>
+      
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        Ofrecemos un portafolio completo de servicios especializados en logística internacional, 
+        diseñados para impulsar el crecimiento de tu empresa en mercados globales.
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+      <!-- Service 1 -->
+      <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group animate-on-scroll stagger-item">
+        <div class="w-16 h-16 bg-gradient-to-br from-tn-blue to-tn-blue-dark rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <Compass class="w-8 h-8 text-tn-yellow" />
+        </div>
+        
+        <h3 class="text-xl font-intro-bold text-tn-blue mb-4">
+          Asesoría y Consultoría en Operación Logística Internacional
+        </h3>
+        
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          Análisis integral de procesos, optimización de rutas, selección de proveedores 
+          y estrategias personalizadas para maximizar la eficiencia de tus operaciones globales.
+        </p>
+        
+        <div class="flex items-center text-tn-yellow font-intro-bold group-hover:text-tn-blue transition-colors">
+          <span class="mr-2">Más información</span>
+          <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </div>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group animate-on-scroll stagger-item">
+        <div class="w-16 h-16 bg-gradient-to-br from-tn-blue to-tn-blue-dark rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <Truck class="w-8 h-8 text-tn-yellow" />
+        </div>
+        
+        <h3 class="text-xl font-intro-bold text-tn-blue mb-4">
+          Servicios Logísticos Integrales
+        </h3>
+        
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          Gestión completa de la cadena de suministro, desde el origen hasta el destino final, 
+          incluyendo transporte multimodal, almacenamiento y distribución.
+        </p>
+        
+        <div class="flex items-center text-tn-yellow font-intro-bold group-hover:text-tn-blue transition-colors">
+          <span class="mr-2">Más información</span>
+          <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </div>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group animate-on-scroll stagger-item">
+        <div class="w-16 h-16 bg-gradient-to-br from-tn-blue to-tn-blue-dark rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <FileCheck class="w-8 h-8 text-tn-yellow" />
+        </div>
+        
+        <h3 class="text-xl font-intro-bold text-tn-blue mb-4">
+          Trámite de Vistos Buenos
+        </h3>
+        
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          Gestión especializada de permisos, licencias y autorizaciones requeridas 
+          para el comercio internacional, asegurando el cumplimiento normativo.
+        </p>
+        
+        <div class="flex items-center text-tn-yellow font-intro-bold group-hover:text-tn-blue transition-colors">
+          <span class="mr-2">Más información</span>
+          <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </div>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group animate-on-scroll stagger-item">
+        <div class="w-16 h-16 bg-gradient-to-br from-tn-blue to-tn-blue-dark rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <Settings class="w-8 h-8 text-tn-yellow" />
+        </div>
+        
+        <h3 class="text-xl font-intro-bold text-tn-blue mb-4">
+          Planeación y Desarrollo de la Operación Logística Integral
+        </h3>
+        
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          Diseño e implementación de estrategias logísticas personalizadas, 
+          desde la conceptualización hasta la ejecución y monitoreo continuo.
+        </p>
+        
+        <div class="flex items-center text-tn-yellow font-intro-bold group-hover:text-tn-blue transition-colors">
+          <span class="mr-2">Más información</span>
+          <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </div>
+      </div>
+
+      <!-- Service 5 -->
+      <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group animate-on-scroll stagger-item">
+        <div class="w-16 h-16 bg-gradient-to-br from-tn-blue to-tn-blue-dark rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <GraduationCap class="w-8 h-8 text-tn-yellow" />
+        </div>
+        
+        <h3 class="text-xl font-intro-bold text-tn-blue mb-4">
+          Capacitaciones y Cursos Personalizados
+        </h3>
+        
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          Programas de formación especializados en comercio exterior, logística internacional 
+          y mejores prácticas para fortalecer las competencias de tu equipo.
+        </p>
+        
+        <div class="flex items-center text-tn-yellow font-intro-bold group-hover:text-tn-blue transition-colors">
+          <span class="mr-2">Más información</span>
+          <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </div>
+      </div>
+
+      <!-- Service 6 -->
+      <div class="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group animate-on-scroll stagger-item">
+        <div class="w-16 h-16 bg-gradient-to-br from-tn-blue to-tn-blue-dark rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+          <MapPin class="w-8 h-8 text-tn-yellow" />
+        </div>
+        
+        <h3 class="text-xl font-intro-bold text-tn-blue mb-4">
+          Asistencia Comercial en China
+        </h3>
+        
+        <p class="text-gray-600 mb-6 leading-relaxed">
+          Acompañamiento especializado para operaciones comerciales en el mercado chino, 
+          incluyendo negociación, sourcing y gestión de proveedores locales.
+        </p>
+        
+        <div class="flex items-center text-tn-yellow font-intro-bold group-hover:text-tn-blue transition-colors">
+          <span class="mr-2">Más información</span>
+          <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="text-center animate-on-scroll">
+      <div class="bg-gradient-to-r from-tn-blue to-tn-blue-dark rounded-3xl p-8 md:p-12 text-white">
+        <h3 class="text-3xl md:text-4xl font-intro-bold mb-4">
+          ¿Necesitas una solución personalizada?
+        </h3>
+        <p class="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+          Cada empresa es única. Trabajemos juntos para crear la estrategia logística 
+          perfecta para tus necesidades específicas.
+        </p>
+        <a 
+          href="#contacto" 
+          class="inline-block bg-tn-yellow hover:bg-tn-yellow-light text-tn-blue font-intro-bold px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
+        >
+          Solicita tu Consulta Gratuita
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

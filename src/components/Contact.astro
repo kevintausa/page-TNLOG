@@ -1,0 +1,305 @@
+---
+import { 
+  Mail, 
+  Phone, 
+  MapPin, 
+  Send, 
+  User, 
+  Building,
+  MessageSquare,
+  ArrowRight,
+  Globe
+} from 'lucide-astro';
+---
+
+<section id="contacto" class="py-20 bg-gradient-to-br from-white via-gray-50 to-white relative overflow-hidden">
+  <!-- Background decoration -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute top-10 right-10 w-32 h-32 bg-tn-yellow rounded-full"></div>
+    <div class="absolute bottom-20 left-10 w-24 h-24 bg-tn-blue rounded-full"></div>
+    <div class="absolute top-1/2 left-1/4 w-16 h-16 bg-tn-yellow rounded-full"></div>
+  </div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <!-- Section Header -->
+    <div class="text-center mb-16 animate-on-scroll">
+      <span class="inline-block bg-tn-blue text-white px-6 py-3 rounded-full font-intro-bold uppercase tracking-wider text-sm mb-6">
+        Contacto
+      </span>
+      
+      <h2 class="text-4xl md:text-5xl font-intro-bold text-tn-blue mb-6 leading-tight">
+        Lleva tu Empresa al 
+        <span class="text-tn-yellow">Siguiente Nivel</span>
+      </h2>
+      
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
+        Estamos listos para acompañarte en tu proceso de internacionalización. 
+        Contáctanos hoy y descubre cómo podemos impulsar el crecimiento de tu empresa.
+      </p>
+      
+      <div class="inline-flex items-center gap-2 bg-tn-yellow text-tn-blue px-6 py-3 rounded-full font-intro-bold">
+        <Globe class="w-5 h-5" />
+        <span>Consulta Gratuita Disponible</span>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-16 items-start">
+      <!-- Contact Form -->
+      <div class="animate-on-scroll">
+        <div class="bg-white rounded-3xl p-8 shadow-2xl">
+          <h3 class="text-2xl font-intro-bold text-tn-blue mb-6">
+            Solicita tu Consulta Personalizada
+          </h3>
+          
+          <form class="space-y-6" id="contact-form">
+            <!-- Name -->
+            <div class="relative">
+              <label for="name" class="block text-sm font-intro-bold text-tn-blue mb-2">
+                Nombre Completo *
+              </label>
+              <div class="relative">
+                <User class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name"
+                  required
+                  class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-tn-yellow focus:border-transparent transition-all duration-300"
+                  placeholder="Tu nombre completo"
+                />
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="relative">
+              <label for="email" class="block text-sm font-intro-bold text-tn-blue mb-2">
+                Correo Electrónico *
+              </label>
+              <div class="relative">
+                <Mail class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email"
+                  required
+                  class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-tn-yellow focus:border-transparent transition-all duration-300"
+                  placeholder="tu@empresa.com"
+                />
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="relative">
+              <label for="phone" class="block text-sm font-intro-bold text-tn-blue mb-2">
+                Teléfono
+              </label>
+              <div class="relative">
+                <Phone class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="phone"
+                  class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-tn-yellow focus:border-transparent transition-all duration-300"
+                  placeholder="+57 300 123 4567"
+                />
+              </div>
+            </div>
+
+            <!-- Company -->
+            <div class="relative">
+              <label for="company" class="block text-sm font-intro-bold text-tn-blue mb-2">
+                Empresa
+              </label>
+              <div class="relative">
+                <Building class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <input 
+                  type="text" 
+                  id="company" 
+                  name="company"
+                  class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-tn-yellow focus:border-transparent transition-all duration-300"
+                  placeholder="Nombre de tu empresa"
+                />
+              </div>
+            </div>
+
+            <!-- Service Interest -->
+            <div class="relative">
+              <label for="service" class="block text-sm font-intro-bold text-tn-blue mb-2">
+                Servicio de Interés
+              </label>
+              <select 
+                id="service" 
+                name="service"
+                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-tn-yellow focus:border-transparent transition-all duration-300"
+              >
+                <option value="">Selecciona un servicio</option>
+                <option value="asesoria">Asesoría y Consultoría Logística</option>
+                <option value="logistica">Servicios Logísticos Integrales</option>
+                <option value="vistos">Trámite de Vistos Buenos</option>
+                <option value="planeacion">Planeación Logística Integral</option>
+                <option value="capacitacion">Capacitaciones y Cursos</option>
+                <option value="china">Asistencia Comercial en China</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+
+            <!-- Message -->
+            <div class="relative">
+              <label for="message" class="block text-sm font-intro-bold text-tn-blue mb-2">
+                Mensaje *
+              </label>
+              <div class="relative">
+                <MessageSquare class="absolute left-3 top-4 w-5 h-5 text-gray-400" />
+                <textarea 
+                  id="message" 
+                  name="message"
+                  rows="4"
+                  required
+                  class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-tn-yellow focus:border-transparent transition-all duration-300 resize-none"
+                  placeholder="Cuéntanos sobre tu proyecto y cómo podemos ayudarte..."
+                ></textarea>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button 
+              type="submit"
+              class="w-full bg-gradient-to-r from-tn-blue to-tn-blue-dark hover:from-tn-blue-dark hover:to-tn-blue text-white font-intro-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center gap-3 group"
+            >
+              <Send class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              Enviar Mensaje
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Contact Information -->
+      <div class="space-y-8">
+        <!-- Contact Cards -->
+        <div class="animate-on-scroll stagger-item">
+          <div class="bg-gradient-to-br from-tn-blue to-tn-blue-dark rounded-3xl p-8 text-white">
+            <h3 class="text-2xl font-intro-bold mb-6">Información de Contacto</h3>
+            
+            <div class="space-y-6">
+              <!-- Email -->
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-tn-yellow rounded-full flex items-center justify-center flex-shrink-0">
+                  <Mail class="w-6 h-6 text-tn-blue" />
+                </div>
+                <div>
+                  <div class="font-intro-bold text-tn-yellow">Email</div>
+                  <div class="text-gray-200">info@tnlogistics.com</div>
+                </div>
+              </div>
+
+              <!-- Phone -->
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-tn-yellow rounded-full flex items-center justify-center flex-shrink-0">
+                  <Phone class="w-6 h-6 text-tn-blue" />
+                </div>
+                <div>
+                  <div class="font-intro-bold text-tn-yellow">Teléfono</div>
+                  <div class="text-gray-200">+57 (1) 234-5678</div>
+                </div>
+              </div>
+
+              <!-- Address -->
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-tn-yellow rounded-full flex items-center justify-center flex-shrink-0">
+                  <MapPin class="w-6 h-6 text-tn-blue" />
+                </div>
+                <div>
+                  <div class="font-intro-bold text-tn-yellow">Oficina Principal</div>
+                  <div class="text-gray-200">Bogotá, Colombia</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Business Hours -->
+            <div class="mt-8 pt-8 border-t border-white/20">
+              <h4 class="font-intro-bold text-tn-yellow mb-4">Horarios de Atención</h4>
+              <div class="space-y-2 text-gray-200">
+                <div class="flex justify-between">
+                  <span>Lunes - Viernes:</span>
+                  <span>8:00 AM - 6:00 PM</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Sábados:</span>
+                  <span>9:00 AM - 2:00 PM</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Domingos:</span>
+                  <span>Cerrado</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Card -->
+        <div class="animate-on-scroll stagger-item">
+          <div class="bg-tn-yellow rounded-3xl p-8">
+            <h3 class="text-2xl font-intro-bold text-tn-blue mb-4">
+              ¿Prefieres una llamada?
+            </h3>
+            <p class="text-tn-blue/80 mb-6">
+              Agenda una consulta telefónica gratuita con uno de nuestros expertos. 
+              Te contactaremos en menos de 24 horas.
+            </p>
+            <a 
+              href="tel:+5712345678"
+              class="inline-flex items-center gap-3 bg-tn-blue hover:bg-tn-blue-dark text-white font-intro-bold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 group"
+            >
+              <Phone class="w-5 h-5" />
+              Llamar Ahora
+              <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Social Proof -->
+        <div class="animate-on-scroll stagger-item">
+          <div class="bg-white rounded-3xl p-8 shadow-lg">
+            <h4 class="text-lg font-intro-bold text-tn-blue mb-4 text-center">
+              Respuesta Garantizada
+            </h4>
+            <div class="text-center text-gray-600">
+              <div class="text-3xl font-intro-bold text-tn-yellow mb-2">< 24h</div>
+              <div class="text-sm">Tiempo de respuesta promedio</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.getElementById('contact-form')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form data
+    const formData = new FormData(this);
+    const data = Object.fromEntries(formData);
+    
+    // Simple validation
+    if (!data.name || !data.email || !data.message) {
+      alert('Por favor completa todos los campos requeridos.');
+      return;
+    }
+    
+    // Simulate form submission
+    const submitButton = this.querySelector('button[type="submit"]');
+    const originalText = submitButton.innerHTML;
+    
+    submitButton.innerHTML = '<div class="animate-spin w-5 h-5 border-2 border-white border-t-transparent rounded-full"></div> Enviando...';
+    submitButton.disabled = true;
+    
+    setTimeout(() => {
+      alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
+      this.reset();
+      submitButton.innerHTML = originalText;
+      submitButton.disabled = false;
+    }, 2000);
+  });
+</script>
