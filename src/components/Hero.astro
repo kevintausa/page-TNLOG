@@ -19,7 +19,7 @@ import {
   <div class="absolute inset-0 transition-all duration-1000 ease-in-out" id="bg-container">
     <!-- Background image layers for each service -->
     <!-- Asesoría y Consultoría Logística -->
-    <div class="bg-image active absolute inset-0 bg-cover bg-center bg-no-repeat opacity-45" 
+    <div class="bg-image active absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10" 
          style="background-image: url('/images/services/logistica-internacional.jpg')"
          data-service="0"></div>
     
@@ -54,7 +54,7 @@ import {
 
   <!-- Animated pattern overlay -->
   <div class="absolute inset-0 opacity-10">
-    <div class="parallax-bg absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23FACB00" fill-opacity="0.3"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
+    <div class="parallax-bg absolute inset-0 pattern-dots"></div>
   </div>
 
   <!-- Floating elements -->
@@ -71,14 +71,21 @@ import {
   <div class="container mx-auto px-6 text-center relative z-10">
     <!-- Dynamic headline with rotating services -->
     <div class="animate-slide-up max-w-5xl mx-auto" style="animation-delay: 0.3s;">
-      <h2 class="text-5xl md:text-7xl lg:text-8xl font-intro-bold text-white mb-4 leading-tight tracking-tight">
-        <span class="block">Expandiendo</span>
-        <span class="text-tn-yellow drop-shadow-lg">Horizontes</span>
-      </h2>
+      <div class="mb-8">
+        <h2 class="text-4xl md:text-6xl lg:text-7xl font-intro-bold text-white mb-2 leading-tight tracking-tight">
+          <span class="block">Expandiendo</span>
+          <span class="text-tn-yellow drop-shadow-lg">Horizontes</span>
+        </h2>
+        
+        <!-- Complete slogan integrated -->
+        <p class="text-2xl md:text-3xl lg:text-5xl font-intro-bold text-white leading-tight opacity-95">
+          Con soluciones logísticas integrales
+        </p>
+      </div>
       
       <!-- Dynamic rotating service text -->
-      <div class="h-20 md:h-24 lg:h-28 flex items-center justify-center mb-6">
-        <h3 class="text-2xl md:text-4xl lg:text-5xl font-intro text-white opacity-95 text-center">
+      <div class="h-16 md:h-20 lg:h-24 flex items-center justify-center mb-3">
+        <h3 class="text-xl md:text-2xl lg:text-3xl font-intro text-white opacity-95 text-center">
           <span class="block mb-2">Especialistas en</span>
           <span id="rotating-service" class="text-tn-yellow font-intro-bold drop-shadow-lg inline-block min-h-[1.2em]">
             Logística Internacional
@@ -87,7 +94,7 @@ import {
       </div>
       
       <!-- Service description that changes -->
-      <div class="h-16 md:h-20 flex items-center justify-center">
+      <div class="h-12 md:h-16 flex items-center justify-center">
         <p id="service-description" class="text-lg md:text-xl text-gray-200 leading-relaxed text-center max-w-3xl transition-all duration-500">
           Conectamos tu empresa con oportunidades globales a través de soluciones logísticas integrales
         </p>
@@ -96,7 +103,7 @@ import {
 
 
     <!-- CTA Button -->
-    <div class="animate-scale-in" style="animation-delay: 0.9s;">
+    <div class="animate-scale-in mt-5" style="animation-delay: 0.9s;">
       <a 
         href="#servicios" 
         class="inline-flex items-center gap-2 bg-tn-yellow hover:bg-tn-yellow-light text-tn-blue font-intro-bold px-8 py-4 rounded-full text-base md:text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl shadow-lg group relative overflow-hidden"
@@ -287,11 +294,11 @@ import {
     </div>
 
     <!-- Scroll indicator -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+  <!--   <div class="absolute bottom-8 animate-bounce">
       <div class="w-6 h-10 border-2 border-tn-yellow rounded-full flex justify-center">
         <div class="w-1 h-3 bg-tn-yellow rounded-full mt-2 animate-pulse"></div>
       </div>
-    </div>
+    </div> -->
   </div>
 
   <!-- Gradient overlay -->
@@ -343,8 +350,20 @@ import {
   }
 
   .bg-image.active {
-    opacity: 0.45 !important;
+    opacity: 0.7 !important;
     transform: scale(1);
+  }
+
+  /* Patrón de puntos */
+  .pattern-dots {
+    background-image: radial-gradient(circle at 2px 2px, #FACB00 1px, transparent 0);
+    background-size: 30px 30px;
+    animation: patternMove 15s linear infinite;
+  }
+
+  @keyframes patternMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 30px 30px; }
   }
 
   .bg-image.fade-out {
@@ -751,6 +770,14 @@ import {
     let isNavigationVisible = true;
     let isNavigationTemporarilyShown = false;
 
+    // Ensure navigation is visible by default
+    if (navigationContainer) {
+      navigationContainer.classList.remove('hidden');
+    }
+    if (mobileNavigationContainer) {
+      mobileNavigationContainer.classList.remove('hidden');
+    }
+
     // Add event listeners to navigation buttons (both desktop and mobile)
     serviceNavButtons.forEach((btn, index) => {
       btn.addEventListener('click', () => {
@@ -819,7 +846,7 @@ import {
             isNavigationVisible = false;
           }
         } else {
-          if (!isNavigationVisible) {
+          if (!isNavigationVisible || currentScrollY === 0) {
             // Show desktop navigation
             if (navigationContainer) {
               navigationContainer.classList.remove('hidden');

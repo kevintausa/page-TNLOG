@@ -31,14 +31,14 @@ const { title, description, icon, heroImage, benefits, process } = Astro.props;
     <!-- Content -->
     <div class="container mx-auto px-6 text-center relative z-10">
       <!-- Back Button -->
-      <div class="absolute top-8 left-6 animate-fade-in">
-        <a 
-          href="/#servicios" 
-          class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-white hover:bg-white/20 px-4 py-2 rounded-full transition-all duration-300 group"
+      <div class="absolute top-4 left-6 animate-fade-in z-20">
+        <button 
+          onclick="window.location.href = '/'; setTimeout(() => { const section = document.querySelector('#servicios'); if (section) section.scrollIntoView({ behavior: 'smooth' }); }, 100);"
+          class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md text-white hover:bg-white/20 px-4 py-2 rounded-full transition-all duration-300 group cursor-pointer"
         >
           <ArrowLeft class="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-          Volver a servicios
-        </a>
+          Volver
+        </button>
       </div>
 
       <!-- Service Icon -->
@@ -228,11 +228,12 @@ const { title, description, icon, heroImage, benefits, process } = Astro.props;
     observer.observe(el);
   });
 
+
   // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
+    anchor.addEventListener('click', function (e: Event) {
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
+      const target = document.querySelector((e.target as HTMLAnchorElement).getAttribute('href') || '');
       if (target) {
         target.scrollIntoView({
           behavior: 'smooth',
