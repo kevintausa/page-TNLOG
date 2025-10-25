@@ -7,7 +7,7 @@ import {
 } from 'lucide-astro';
 ---
 
-<section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-tn-blue via-tn-blue-dark to-tn-blue pt-20">
+<section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
   <!-- Dynamic background images -->
   <div class="absolute inset-0 transition-all duration-1000 ease-in-out" id="bg-container">
     <!-- Background image layers for each service -->
@@ -62,35 +62,33 @@ import {
   </div>
 
   <div class="container mx-auto px-6 text-center relative z-10">
-    <!-- Dynamic headline with rotating services -->
-    <div class="animate-slide-up max-w-5xl mx-auto" style="animation-delay: 0.3s;">
-      <div class="mb-8">
-        <h2 class="text-4xl md:text-6xl lg:text-7xl font-intro-bold text-white mb-2 leading-tight tracking-tight">
-          <span class="block">Expandiendo</span>
-          <span class="text-tn-yellow drop-shadow-lg">Horizontes</span>
-        </h2>
+    <!-- Content container with fixed height -->
+    <div class="animate-slide-up max-w-5xl mx-auto min-h-[400px] md:min-h-[450px] lg:min-h-[500px] flex flex-col justify-center" style="animation-delay: 0.3s;">
+      <!-- Main slogan - First slide -->
+      <div id="main-slogan" class="transition-all duration-500">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-intro-bold text-white mb-4 leading-tight tracking-tight">
+          <span class="block">Expandiendo Horizontes</span>
+          <span class="text-tn-yellow drop-shadow-lg">Conectando Oportunidades</span>
+        </h1>
+      </div>
+      
+      <!-- Service content - Other slides -->
+      <div id="service-content" class="opacity-0 transition-all duration-700" style="display: none;">
+        <!-- Dynamic rotating service text -->
+        <div class="flex items-center justify-center mb-6">
+          <h2 class="text-3xl md:text-5xl lg:text-7xl font-intro-bold text-tn-yellow drop-shadow-lg text-center leading-tight">
+            <span id="rotating-service" class="inline-block min-h-[1.2em]">
+              Logística Internacional
+            </span>
+          </h2>
+        </div>
         
-        <!-- Complete slogan integrated -->
-        <p class="text-4xl md:text-5xl lg:text-6xl font-intro-bold text-white leading-tight opacity-95">
-          Conectando oportunidades
-        </p>
-      </div>
-      
-      <!-- Dynamic rotating service text -->
-      <div class="h-16 md:h-20 lg:h-24 flex items-center justify-center mb-3">
-        <h3 class="text-xl md:text-2xl lg:text-3xl font-intro text-white opacity-95 text-center">
-          <span class="block mb-2">Especialistas en</span>
-          <span id="rotating-service" class="text-tn-yellow font-intro-bold drop-shadow-lg inline-block min-h-[1.2em]">
-            Logística Internacional
-          </span>
-        </h3>
-      </div>
-      
-      <!-- Service description that changes -->
-      <div class="h-12 md:h-16 flex items-center justify-center">
-        <p id="service-description" class="text-lg md:text-xl text-gray-200 leading-relaxed text-center max-w-3xl transition-all duration-500">
-          Conectamos tu empresa con oportunidades globales a través de soluciones logísticas integrales
-        </p>
+        <!-- Service description that changes -->
+        <div class="flex items-center justify-center px-4">
+          <p id="service-description" class="text-xl md:text-2xl lg:text-3xl text-white leading-relaxed text-center max-w-4xl transition-all duration-500 font-intro">
+            Conectamos tu empresa con oportunidades globales a través de soluciones logísticas integrales
+          </p>
+        </div>
       </div>
     </div>
 
@@ -112,40 +110,46 @@ import {
     <!-- Horizontal Service Navigation (Bottom) - Dots -->
     <div class="service-navigation-horizontal absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
       <div class="flex items-center gap-3">
-        <!-- Dot indicators -->
+        <!-- Dot indicators: 0 = Slogan, 1-6 = Services -->
         <button 
           class="service-nav-btn active w-3 h-3 rounded-full bg-tn-yellow transition-all duration-300 hover:scale-125" 
-          data-service="0"
+          data-slide="0"
+          aria-label="Inicio - Slogan"
+        ></button>
+
+        <button 
+          class="service-nav-btn w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300 hover:scale-125" 
+          data-slide="1"
           aria-label="Servicio 1"
         ></button>
 
         <button 
           class="service-nav-btn w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300 hover:scale-125" 
-          data-service="1"
+          data-slide="2"
           aria-label="Servicio 2"
         ></button>
 
         <button 
           class="service-nav-btn w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300 hover:scale-125" 
-          data-service="2"
+          data-slide="3"
           aria-label="Servicio 3"
         ></button>
 
         <button 
           class="service-nav-btn w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300 hover:scale-125" 
-          data-service="3"
+          data-slide="4"
           aria-label="Servicio 4"
         ></button>
 
         <button 
           class="service-nav-btn w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300 hover:scale-125" 
-          data-service="4"
+          data-slide="5"
           aria-label="Servicio 5"
         ></button>
 
         <button 
           class="service-nav-btn w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300 hover:scale-125" 
-          data-service="5"
+          data-slide="6"
           aria-label="Servicio 6"
         ></button>
       </div>
@@ -387,34 +391,36 @@ import {
     }
   ];
 
-  let currentServiceIndex = 0;
+  let currentSlideIndex = 0; // 0 = slogan, 1-6 = services
   let autoRotationInterval;
   const rotatingServiceElement = document.getElementById('rotating-service');
   const serviceDescriptionElement = document.getElementById('service-description');
   const serviceTitleElement = document.getElementById('current-service-title');
   const backgroundImages = document.querySelectorAll('.bg-image');
   const serviceNavButtons = document.querySelectorAll('.service-nav-btn');
+  const mainSlogan = document.getElementById('main-slogan');
+  const serviceContent = document.getElementById('service-content');
 
-  function updateBackgroundImage(serviceIndex) {
-    // Remove active class from all backgrounds
+  function updateBackgroundImage(slideIndex) {
+    // slideIndex 0 = slogan (use first background), 1-6 = services
+    const bgIndex = slideIndex === 0 ? 0 : slideIndex - 1;
+    
     backgroundImages.forEach((bg, index) => {
       bg.classList.remove('active', 'fade-out');
-      if (index === serviceIndex) {
-        // Add active class to current service background
+      if (index === bgIndex) {
         setTimeout(() => {
           bg.classList.add('active');
         }, 100);
       } else {
-        // Add fade-out class to others
         bg.classList.add('fade-out');
       }
     });
   }
 
-  function updateNavigationButtons(serviceIndex) {
+  function updateNavigationButtons(slideIndex) {
     // Update dot indicators
     serviceNavButtons.forEach((btn, index) => {
-      if (index === serviceIndex) {
+      if (index === slideIndex) {
         btn.classList.add('active', 'bg-tn-yellow');
         btn.classList.remove('bg-white/40', 'hover:bg-white/60');
       } else {
@@ -424,75 +430,98 @@ import {
     });
   }
 
-  function updateService(newIndex = null) {
-    if (!rotatingServiceElement || !serviceDescriptionElement) return;
-
-    // If newIndex is provided, use it; otherwise use current rotation logic
-    if (newIndex !== null) {
-      currentServiceIndex = newIndex;
-    }
-
-    const currentService = services[currentServiceIndex];
+  function showSlide(slideIndex) {
+    currentSlideIndex = slideIndex;
     
     // Update background image
-    updateBackgroundImage(currentServiceIndex);
+    updateBackgroundImage(slideIndex);
     
     // Update navigation buttons
-    updateNavigationButtons(currentServiceIndex);
+    updateNavigationButtons(slideIndex);
     
-    // Add exit animation
-    rotatingServiceElement.classList.add('slide-out');
-    serviceDescriptionElement.style.opacity = '0';
-    serviceDescriptionElement.style.transform = 'translateY(20px)';
-    
-    // Update service title in navigation
-    if (serviceTitleElement) {
-      serviceTitleElement.style.opacity = '0';
-      serviceTitleElement.style.transform = 'translateY(10px)';
-    }
-    
-    setTimeout(() => {
-      // Update content
-      rotatingServiceElement.textContent = currentService.title;
-      serviceDescriptionElement.textContent = currentService.description;
+    if (slideIndex === 0) {
+      // Show slogan
+      if (serviceContent) {
+        serviceContent.style.opacity = '0';
+        setTimeout(() => {
+          serviceContent.style.display = 'none';
+          if (mainSlogan) {
+            mainSlogan.style.display = 'block';
+            setTimeout(() => {
+              mainSlogan.style.opacity = '1';
+              mainSlogan.style.transform = 'scale(1)';
+            }, 50);
+          }
+        }, 500);
+      }
+    } else {
+      // Show service (slideIndex 1-6 = services[0-5])
+      const serviceIndex = slideIndex - 1;
+      const currentService = services[serviceIndex];
       
-      if (serviceTitleElement) {
-        serviceTitleElement.textContent = currentService.title;
+      if (!rotatingServiceElement || !serviceDescriptionElement) return;
+      
+      // Hide slogan if visible
+      if (mainSlogan && mainSlogan.style.display !== 'none') {
+        mainSlogan.style.opacity = '0';
+        mainSlogan.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+          mainSlogan.style.display = 'none';
+          if (serviceContent) {
+            serviceContent.style.display = 'block';
+            setTimeout(() => {
+              serviceContent.style.opacity = '1';
+            }, 50);
+          }
+        }, 500);
       }
       
-      // Remove exit animation and add enter animation
-      rotatingServiceElement.classList.remove('slide-out');
-      rotatingServiceElement.classList.add('slide-in');
+      // Add exit animation for service content
+      rotatingServiceElement.classList.add('slide-out');
+      serviceDescriptionElement.style.opacity = '0';
+      serviceDescriptionElement.style.transform = 'translateY(20px)';
       
-      // Animate description
-      serviceDescriptionElement.style.opacity = '1';
-      serviceDescriptionElement.style.transform = 'translateY(0)';
-      
-      // Animate service title
       if (serviceTitleElement) {
-        serviceTitleElement.style.opacity = '1';
-        serviceTitleElement.style.transform = 'translateY(0)';
+        serviceTitleElement.style.opacity = '0';
+        serviceTitleElement.style.transform = 'translateY(10px)';
       }
       
       setTimeout(() => {
-        rotatingServiceElement.classList.remove('slide-in');
-      }, 600);
-      
-    }, 400);
-
-    // Only auto-increment if not manually triggered
-    if (newIndex === null) {
-      currentServiceIndex = (currentServiceIndex + 1) % services.length;
+        // Update content
+        rotatingServiceElement.textContent = currentService.title;
+        serviceDescriptionElement.textContent = currentService.description;
+        
+        if (serviceTitleElement) {
+          serviceTitleElement.textContent = currentService.title;
+        }
+        
+        // Remove exit animation and add enter animation
+        rotatingServiceElement.classList.remove('slide-out');
+        rotatingServiceElement.classList.add('slide-in');
+        
+        // Animate description
+        serviceDescriptionElement.style.opacity = '1';
+        serviceDescriptionElement.style.transform = 'translateY(0)';
+        
+        if (serviceTitleElement) {
+          serviceTitleElement.style.opacity = '1';
+          serviceTitleElement.style.transform = 'translateY(0)';
+        }
+        
+        setTimeout(() => {
+          rotatingServiceElement.classList.remove('slide-in');
+        }, 600);
+      }, 400);
     }
   }
 
-  function goToService(index) {
+  function goToSlide(slideIndex) {
     // Stop auto rotation temporarily
     if (autoRotationInterval) {
       clearInterval(autoRotationInterval);
     }
     
-    updateService(index);
+    showSlide(slideIndex);
     
     // Restart auto rotation after 8 seconds
     setTimeout(() => {
@@ -505,8 +534,9 @@ import {
       clearInterval(autoRotationInterval);
     }
     autoRotationInterval = setInterval(() => {
-      currentServiceIndex = (currentServiceIndex + 1) % services.length;
-      updateService();
+      // Cycle through all slides: 0 (slogan) -> 1-6 (services) -> back to 0
+      currentSlideIndex = (currentSlideIndex + 1) % 7;
+      showSlide(currentSlideIndex);
     }, 4000);
   }
 
@@ -515,7 +545,7 @@ import {
     const navigationContainer = document.querySelector('.service-navigation-horizontal');
     let isNavigationVisible = true;
 
-    // Ensure navigation is visible by default
+    // Show navigation from the start
     if (navigationContainer) {
       navigationContainer.classList.remove('hidden');
     }
@@ -523,18 +553,19 @@ import {
     // Add event listeners to navigation buttons
     serviceNavButtons.forEach((btn, index) => {
       btn.addEventListener('click', () => {
-        goToService(index);
+        const slideIndex = parseInt(btn.getAttribute('data-slide') || '0');
+        goToSlide(slideIndex);
       });
     });
 
     // Add keyboard navigation
     document.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowLeft') {
-        const prevIndex = (currentServiceIndex - 1 + services.length) % services.length;
-        goToService(prevIndex);
+        const prevIndex = (currentSlideIndex - 1 + 7) % 7;
+        goToSlide(prevIndex);
       } else if (e.key === 'ArrowRight') {
-        const nextIndex = (currentServiceIndex + 1) % services.length;
-        goToService(nextIndex);
+        const nextIndex = (currentSlideIndex + 1) % 7;
+        goToSlide(nextIndex);
       }
     });
 
@@ -565,21 +596,12 @@ import {
       }
     });
 
-    // Initialize first service display
+    // Initialize first slide (slogan)
     updateNavigationButtons(0);
     
-    // Add typing effect to initial service
-    if (rotatingServiceElement) {
-      rotatingServiceElement.classList.add('typing-effect');
-      setTimeout(() => {
-        rotatingServiceElement.classList.remove('typing-effect');
-        rotatingServiceElement.style.borderRight = 'none';
-      }, 2500);
-    }
-
-    // Start auto rotation after initial load
+    // Start auto rotation after initial load (4 seconds showing slogan)
     setTimeout(() => {
       startAutoRotation();
-    }, 3000);
+    }, 4000);
   });
 </script>
