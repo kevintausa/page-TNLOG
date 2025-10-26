@@ -10,39 +10,44 @@ import {
 <section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
   <!-- Dynamic background images -->
   <div class="absolute inset-0 transition-all duration-1000 ease-in-out" id="bg-container">
-    <!-- Background image layers for each service -->
-    <!-- Asesoría y Consultoría Logística -->
+    <!-- Background image layers for each slide -->
+    <!-- Slide 0: Slogan -->
     <div class="bg-image active absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10" 
-         style="background-image: url('/images/services/logistica-internacional.jpg')"
-         data-service="0"></div>
+         style="background-image: url('/images/services/hero-slogan.webp')"
+         data-slide="0"></div>
     
-    <!-- Servicios Logísticos Integrales -->
+    <!-- Slide 1: Asesoría y Consultoría Logística -->
     <div class="bg-image absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0" 
-         style="background-image: url('/images/services/transporte-integral.jpg')"
-         data-service="1"></div>
+         style="background-image: url('/images/services/logistica-internacional.webp')"
+         data-slide="1"></div>
     
-    <!-- Trámite de Vistos Buenos -->
+    <!-- Slide 2: Servicios Logísticos Integrales -->
     <div class="bg-image absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0" 
-         style="background-image: url('/images/services/documentos-permisos.jpg')"
-         data-service="2"></div>
+         style="background-image: url('/images/services/transporte-integral.webp')"
+         data-slide="2"></div>
     
-    <!-- Planeación Logística Integral -->
+    <!-- Slide 3: Trámite de Vistos Buenos -->
     <div class="bg-image absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0" 
-         style="background-image: url('/images/services/planeacion-logistica.jpg')"
-         data-service="3"></div>
+         style="background-image: url('/images/services/documentos-permisos.webp')"
+         data-slide="3"></div>
     
-    <!-- Capacitaciones Personalizadas -->
+    <!-- Slide 4: Planeación Logística Integral -->
     <div class="bg-image absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0" 
-         style="background-image: url('/images/services/capacitacion-empresarial.jpg')"
-         data-service="4"></div>
+         style="background-image: url('/images/services/planeacion-logistica.webp')"
+         data-slide="4"></div>
     
-    <!-- Asistencia Comercial en China -->
+    <!-- Slide 5: Capacitaciones Personalizadas -->
     <div class="bg-image absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0" 
-         style="background-image: url('/images/services/china-comercial.jpg')"
-         data-service="5"></div>
+         style="background-image: url('/images/services/capacitacion-empresarial.webp')"
+         data-slide="5"></div>
+    
+    <!-- Slide 6: Asistencia Comercial en China -->
+    <div class="bg-image absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0" 
+         style="background-image: url('/images/services/china-comercial.webp')"
+         data-slide="6"></div>
     
     <!-- Overlay gradient -->
-    <div class="absolute inset-0 bg-gradient-to-br from-tn-blue/40 via-tn-blue-dark/45 to-tn-blue/40"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-tn-blue/20 via-tn-blue-dark/25 to-tn-blue/20"></div>
   </div>
 
   <!-- Animated pattern overlay -->
@@ -61,12 +66,12 @@ import {
     <Target class="w-6 h-6 text-tn-yellow opacity-60" />
   </div>
 
-  <div class="container mx-auto px-6 text-center relative z-10">
+  <div class="container mx-auto px-4 sm:px-6 text-center relative z-10">
     <!-- Content container with fixed height -->
-    <div class="animate-slide-up max-w-5xl mx-auto min-h-[400px] md:min-h-[450px] lg:min-h-[500px] flex flex-col justify-center" style="animation-delay: 0.3s;">
+    <div class="animate-slide-up max-w-5xl mx-auto min-h-[350px] sm:min-h-[400px] md:min-h-[450px] lg:min-h-[500px] flex flex-col justify-center" style="animation-delay: 0.3s;">
       <!-- Main slogan - First slide -->
-      <div id="main-slogan" class="transition-all duration-500">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-intro-bold text-white mb-4 leading-tight tracking-tight">
+      <div id="main-slogan" class="transition-all duration-500 px-2">
+        <h1 class="text-2xl sm:text-3xl md:text-6xl lg:text-7xl font-intro-bold text-white mb-3 sm:mb-4 leading-tight tracking-tight">
           <span class="block">Expandiendo Horizontes</span>
           <span class="text-tn-yellow drop-shadow-lg">Conectando Oportunidades</span>
         </h1>
@@ -75,8 +80,8 @@ import {
       <!-- Service content - Other slides -->
       <div id="service-content" class="opacity-0 transition-all duration-700" style="display: none;">
         <!-- Dynamic rotating service text -->
-        <div class="flex items-center justify-center mb-6">
-          <h2 class="text-3xl md:text-5xl lg:text-7xl font-intro-bold text-tn-yellow drop-shadow-lg text-center leading-tight">
+        <div class="flex items-center justify-center mb-4 sm:mb-6 px-2">
+          <h2 class="text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-intro-bold text-tn-yellow drop-shadow-lg text-center leading-tight">
             <span id="rotating-service" class="inline-block min-h-[1.2em]">
               Logística Internacional
             </span>
@@ -84,8 +89,8 @@ import {
         </div>
         
         <!-- Service description that changes -->
-        <div class="flex items-center justify-center px-4">
-          <p id="service-description" class="text-xl md:text-2xl lg:text-3xl text-white leading-relaxed text-center max-w-4xl transition-all duration-500 font-intro">
+        <div class="flex items-center justify-center px-3 sm:px-4">
+          <p id="service-description" class="text-base sm:text-lg md:text-xl lg:text-2xl text-white leading-relaxed text-center max-w-4xl transition-all duration-500 font-intro">
             Conectamos tu empresa con oportunidades globales a través de soluciones logísticas integrales
           </p>
         </div>
@@ -94,13 +99,13 @@ import {
 
 
     <!-- CTA Button -->
-    <div class="animate-scale-in mt-5 mb-16" style="animation-delay: 0.9s;">
+    <div class="animate-scale-in mt-4 sm:mt-5 mb-12 sm:mb-16" style="animation-delay: 0.9s;">
       <a 
         href="#servicios" 
-        class="inline-flex items-center gap-2 bg-tn-yellow hover:bg-tn-yellow-light text-tn-blue font-intro-bold px-8 py-4 rounded-full text-base md:text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl shadow-lg group relative overflow-hidden"
+        class="inline-flex items-center gap-2 bg-tn-yellow hover:bg-tn-yellow-light text-tn-blue font-intro-bold px-6 sm:px-8 py-3 sm:py-4 rounded-full text-sm sm:text-base md:text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl shadow-lg group relative overflow-hidden"
       >
         <span class="relative z-10">Conoce nuestros servicios</span>
-        <ArrowRight class="w-5 h-5 transition-transform group-hover:translate-x-1 relative z-10" />
+        <ArrowRight class="w-4 sm:w-5 h-4 sm:h-5 transition-transform group-hover:translate-x-1 relative z-10" />
         
         <!-- Button glow effect -->
         <div class="absolute inset-0 bg-gradient-to-r from-tn-yellow-light to-tn-yellow opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -108,8 +113,8 @@ import {
     </div>
 
     <!-- Horizontal Service Navigation (Bottom) - Dots -->
-    <div class="service-navigation-horizontal absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-      <div class="flex items-center gap-3">
+    <div class="service-navigation-horizontal absolute bottom-4 sm:bottom-6 md:bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+      <div class="flex items-center gap-2 sm:gap-3">
         <!-- Dot indicators: 0 = Slogan, 1-6 = Services -->
         <button 
           class="service-nav-btn active w-3 h-3 rounded-full bg-tn-yellow transition-all duration-300 hover:scale-125" 
@@ -402,12 +407,10 @@ import {
   const serviceContent = document.getElementById('service-content');
 
   function updateBackgroundImage(slideIndex) {
-    // slideIndex 0 = slogan (use first background), 1-6 = services
-    const bgIndex = slideIndex === 0 ? 0 : slideIndex - 1;
-    
+    // Now each slide has its own background (0-6)
     backgroundImages.forEach((bg, index) => {
       bg.classList.remove('active', 'fade-out');
-      if (index === bgIndex) {
+      if (index === slideIndex) {
         setTimeout(() => {
           bg.classList.add('active');
         }, 100);
