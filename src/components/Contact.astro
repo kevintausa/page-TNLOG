@@ -3,13 +3,14 @@ import {
   Mail, 
   Phone, 
   MapPin, 
-  Send, 
-  User, 
-  Building,
   MessageSquare,
   ArrowRight,
-  Globe
+  Clock,
+  CheckCircle
 } from 'lucide-astro';
+
+// Número de WhatsApp de la empresa (sin espacios ni caracteres especiales)
+const WHATSAPP_NUMBER = "573504620171";
 ---
 
 <section id="contacto" class="py-20 bg-gradient-to-br from-white via-gray-50 to-white relative overflow-hidden">
@@ -34,142 +35,82 @@ import {
       
       <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
         Estamos listos para acompañarte en tu proceso de internacionalización. 
-        Contáctanos hoy y descubre cómo podemos impulsar el crecimiento de tu empresa.
+        Contáctanos por WhatsApp y recibe atención inmediata de nuestros expertos.
       </p>
-      
-<!--       <div class="inline-flex items-center gap-2 bg-tn-yellow text-tn-blue px-6 py-3 rounded-full font-intro-bold">
-        <Globe class="w-5 h-5" />
-        <span>Consulta Gratuita Disponible</span>
-      </div> -->
     </div>
 
     <div class="grid lg:grid-cols-2 gap-16 items-start">
-      <!-- Contact Form -->
+      <!-- WhatsApp Contact Section -->
       <div class="animate-on-scroll">
-        <div class="bg-white rounded-3xl p-8 shadow-2xl">
-          <h3 class="text-2xl font-intro-bold text-tn-blue mb-6">
-            Solicita tu Consulta Personalizada
-          </h3>
-          
-          <form class="space-y-6" id="contact-form">
-            <!-- Name -->
-            <div class="relative">
-              <label for="name" class="block text-sm font-intro-bold text-tn-blue mb-2">
-                Nombre Completo *
-              </label>
-              <div class="relative">
-                <User class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-                <input 
-                  type="text" 
-                  id="name" 
-                  name="name"
-                  required
-                  class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-tn-yellow focus:border-transparent transition-all duration-300"
-                  placeholder="Tu nombre completo"
-                />
-              </div>
+        <div class="bg-white rounded-3xl p-8 shadow-2xl border-2 border-tn-blue">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-16 h-16  rounded-full flex items-center justify-center">
+              <svg class="w-10 h-10 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+              </svg>
             </div>
-
-            <!-- Email -->
-            <div class="relative">
-              <label for="email" class="block text-sm font-intro-bold text-tn-blue mb-2">
-                Correo Electrónico *
-              </label>
-              <div class="relative">
-                <Mail class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-                <input 
-                  type="email" 
-                  id="email" 
-                  name="email"
-                  required
-                  class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-tn-yellow focus:border-transparent transition-all duration-300"
-                  placeholder="tu@empresa.com"
-                />
-              </div>
+            <div>
+              <h3 class="text-3xl font-intro-bold text-tn-blue">Chatea con Nosotros</h3>
+              <p class="text-gray-600">Respuesta inmediata por WhatsApp</p>
             </div>
+          </div>
 
-            <!-- Phone -->
-            <div class="relative">
-              <label for="phone" class="block text-sm font-intro-bold text-tn-blue mb-2">
-                Teléfono
-              </label>
-              <div class="relative">
-                <Phone class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-                <input 
-                  type="tel" 
-                  id="phone" 
-                  name="phone"
-                  class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-tn-yellow focus:border-transparent transition-all duration-300"
-                  placeholder="+57 300 123 4567"
-                />
-              </div>
-            </div>
+          <p class="text-lg mb-8 text-gray-700">
+            Nuestro equipo está listo para resolver tus dudas y ayudarte con tu proyecto logístico.
+          </p>
 
-            <!-- Company -->
-            <div class="relative">
-              <label for="company" class="block text-sm font-intro-bold text-tn-blue mb-2">
-                Empresa
-              </label>
-              <div class="relative">
-                <Building class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-                <input 
-                  type="text" 
-                  id="company" 
-                  name="company"
-                  class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-tn-yellow focus:border-transparent transition-all duration-300"
-                  placeholder="Nombre de tu empresa"
-                />
-              </div>
-            </div>
-
-            <!-- Service Interest -->
-            <div class="relative">
-              <label for="service" class="block text-sm font-intro-bold text-tn-blue mb-2">
-                Servicio de Interés
-              </label>
-              <select 
-                id="service" 
-                name="service"
-                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-tn-yellow focus:border-transparent transition-all duration-300"
-              >
-                <option value="">Selecciona un servicio</option>
-                <option value="asesoria">Asesoría y Consultoría Logística</option>
-                <option value="logistica">Servicios Logísticos Integrales</option>
-                <option value="vistos">Trámite de Vistos Buenos</option>
-                <option value="planeacion">Planeación Logística Integral</option>
-                <option value="capacitacion">Capacitaciones y Cursos</option>
-                <option value="china">Asistencia Comercial en China</option>
-                <option value="otro">Otro</option>
-              </select>
-            </div>
-
-            <!-- Message -->
-            <div class="relative">
-              <label for="message" class="block text-sm font-intro-bold text-tn-blue mb-2">
-                Mensaje *
-              </label>
-              <div class="relative">
-                <MessageSquare class="absolute left-3 top-4 w-5 h-5 text-gray-400" />
-                <textarea 
-                  id="message" 
-                  name="message"
-                  rows="4"
-                  required
-                  class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-tn-yellow focus:border-transparent transition-all duration-300 resize-none"
-                  placeholder="Cuéntanos sobre tu proyecto y cómo podemos ayudarte..."
-                ></textarea>
-              </div>
-            </div>
-
-            <!-- Submit Button -->
-            <button 
-              type="submit"
-              class="w-full bg-gradient-to-r from-tn-blue to-tn-blue-dark hover:from-tn-blue-dark hover:to-tn-blue text-white font-intro-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center gap-3 group"
+          <!-- Quick Contact Buttons -->
+          <div class="space-y-4 mb-8">
+            <a 
+              href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hola, me gustaría obtener información sobre sus servicios logísticos.`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block w-full bg-gradient-to-r from-tn-blue to-tn-blue-dark hover:from-tn-blue-dark hover:to-tn-blue text-white font-intro-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl flex items-center justify-center gap-3 group"
             >
-              <Send class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              Enviar Mensaje
-            </button>
-          </form>
+              <MessageSquare class="w-5 h-5" />
+              Iniciar Conversación por WhatsApp
+              <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
+
+            <div class="grid grid-cols-2 gap-4">
+              <a 
+                href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hola, necesito una cotización para:`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-tn-yellow hover:bg-tn-yellow/90 text-tn-blue font-intro-bold py-3 px-4 rounded-xl transition-all duration-300 text-center text-sm hover:shadow-lg"
+              >
+                Solicitar Cotización
+              </a>
+              <a 
+                href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hola, me gustaría agendar una consulta sobre:`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bg-tn-yellow hover:bg-tn-yellow/90 text-tn-blue font-intro-bold py-3 px-4 rounded-xl transition-all duration-300 text-center text-sm hover:shadow-lg"
+              >
+                Agendar Consulta
+              </a>
+            </div>
+          </div>
+
+          <!-- Business Hours -->
+          <div class="mt-8 pt-8 border-t border-gray-200">
+            <h4 class="font-intro-bold text-tn-blue mb-6 flex items-center gap-2 text-xl">
+              <div class="w-10 h-10 bg-tn-yellow rounded-full flex items-center justify-center">
+                <Clock class="w-5 h-5 text-tn-blue" />
+              </div>
+              Horarios de Atención
+            </h4>
+            <div class="space-y-3">
+              <div class="flex justify-between items-center bg-gray-50 p-3 rounded-lg hover:bg-gray-100 transition-colors">
+                <span class="text-gray-700 font-medium">Lunes - Viernes:</span>
+                <span class="text-tn-blue font-intro-bold">8:00 AM - 6:00 PM</span>
+              </div>
+              <div class="flex justify-between items-center bg-gray-50 p-1 rounded-lg hover:bg-gray-100 transition-colors">
+                <span class="text-gray-700 font-medium">Sábados:</span>
+                <span class="text-tn-blue font-intro-bold">9:00 AM - 12:00 PM</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -181,30 +122,54 @@ import {
             <h3 class="text-2xl font-intro-bold mb-6">Información de Contacto</h3>
             
             <div class="space-y-6">
+              <!-- WhatsApp -->
+              <a 
+                href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-4 hover:bg-white/10 p-3 rounded-xl transition-all group"
+              >
+                <div class="w-12 h-12 bg-tn-yellow rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <svg class="w-6 h-6 text-tn-blue" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="font-intro-bold text-tn-yellow">WhatsApp</div>
+                  <div class="text-gray-200">+57 350 462 0171</div>
+                </div>
+              </a>
+
               <!-- Email -->
-              <div class="flex items-center gap-4">
-                <div class="w-12 h-12 bg-tn-yellow rounded-full flex items-center justify-center flex-shrink-0">
+              <a 
+                href="mailto:info@tnlog.com.co"
+                class="flex items-center gap-4 hover:bg-white/10 p-3 rounded-xl transition-all group"
+              >
+                <div class="w-12 h-12 bg-tn-yellow rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                   <Mail class="w-6 h-6 text-tn-blue" />
                 </div>
                 <div>
                   <div class="font-intro-bold text-tn-yellow">Email</div>
                   <div class="text-gray-200">info@tnlog.com.co</div>
                 </div>
-              </div>
+              </a>
 
               <!-- Phone -->
-              <div class="flex items-center gap-4">
-                <div class="w-12 h-12 bg-tn-yellow rounded-full flex items-center justify-center flex-shrink-0">
+              <a 
+                href="tel:+573504620171"
+                class="flex items-center gap-4 hover:bg-white/10 p-3 rounded-xl transition-all group"
+              >
+                <div class="w-12 h-12 bg-tn-yellow rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                   <Phone class="w-6 h-6 text-tn-blue" />
                 </div>
                 <div>
                   <div class="font-intro-bold text-tn-yellow">Teléfono</div>
                   <div class="text-gray-200">+57 350 462 0171</div>
                 </div>
-              </div>
+              </a>
 
               <!-- Address -->
-              <div class="flex items-center gap-4">
+              <div class="flex items-center gap-4 p-3">
                 <div class="w-12 h-12 bg-tn-yellow rounded-full flex items-center justify-center flex-shrink-0">
                   <MapPin class="w-6 h-6 text-tn-blue" />
                 </div>
@@ -215,58 +180,7 @@ import {
               </div>
             </div>
 
-            <!-- Business Hours -->
-            <div class="mt-8 pt-8 border-t border-white/20">
-              <h4 class="font-intro-bold text-tn-yellow mb-4">Horarios de Atención</h4>
-              <div class="space-y-2 text-gray-200">
-                <div class="flex justify-between">
-                  <span>Lunes - Viernes:</span>
-                  <span>8:00 AM - 6:00 PM</span>
-                </div>
-                <div class="flex justify-between">
-                  <span>Sábados:</span>
-                  <span>9:00 AM - 12:00 PM</span>
-                </div>
-                <div class="flex justify-between">
-                  <span>Domingos:</span>
-                  <span>Cerrado</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <!-- CTA Card -->
-        <!-- <div class="animate-on-scroll stagger-item">
-          <div class="bg-tn-yellow rounded-3xl p-8">
-            <h3 class="text-2xl font-intro-bold text-tn-blue mb-4">
-              ¿Prefieres una llamada?
-            </h3>
-            <p class="text-tn-blue/80 mb-6">
-              Agenda una consulta telefónica gratuita con uno de nuestros expertos. 
-              Te contactaremos en menos de 24 horas.
-            </p>
-            <a 
-              href="tel:+573504620171"
-              class="inline-flex items-center gap-3 bg-tn-blue hover:bg-tn-blue-dark text-white font-intro-bold px-6 py-3 rounded-full transition-all duration-300 transform hover:scale-105 group"
-            >
-              <Phone class="w-5 h-5" />
-              Llamar Ahora
-              <ArrowRight class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
-          </div>
-        </div> -->
-
-        <!-- Social Proof -->
-        <div class="animate-on-scroll stagger-item">
-          <div class="bg-white rounded-3xl p-8 shadow-lg">
-            <h4 class="text-lg font-intro-bold text-tn-blue mb-4 text-center">
-              Respuesta Garantizada
-            </h4>
-            <div class="text-center text-gray-600">
-              <div class="text-3xl font-intro-bold text-tn-yellow mb-2">24h</div>
-              <div class="text-sm">Tiempo de respuesta promedio</div>
-            </div>
           </div>
         </div>
       </div>
@@ -274,32 +188,32 @@ import {
   </div>
 </section>
 
-<script>
-  document.getElementById('contact-form')?.addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = new FormData(this);
-    const data = Object.fromEntries(formData);
-    
-    // Simple validation
-    if (!data.name || !data.email || !data.message) {
-      alert('Por favor completa todos los campos requeridos.');
-      return;
+<!-- Floating WhatsApp Button -->
+<a 
+  href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hola, me gustaría obtener información sobre TN Logistics.`}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="fixed bottom-6 right-6 z-50 w-16 h-16 bg-tn-blue hover:bg-tn-blue-dark text-white rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 group animate-bounce"
+  aria-label="Contactar por WhatsApp"
+>
+  <svg class="w-8 h-8 text-tn-yellow" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+  </svg>
+  <span class="absolute -top-1 -right-1 w-3 h-3 bg-tn-yellow rounded-full animate-ping"></span>
+  <span class="absolute -top-1 -right-1 w-3 h-3 bg-tn-yellow rounded-full"></span>
+</a>
+
+<style>
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
     }
-    
-    // Simulate form submission
-    const submitButton = this.querySelector('button[type="submit"]');
-    const originalText = submitButton.innerHTML;
-    
-    submitButton.innerHTML = '<div class="animate-spin w-5 h-5 border-2 border-white border-t-transparent rounded-full"></div> Enviando...';
-    submitButton.disabled = true;
-    
-    setTimeout(() => {
-      alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
-      this.reset();
-      submitButton.innerHTML = originalText;
-      submitButton.disabled = false;
-    }, 2000);
-  });
-</script>
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  .animate-bounce {
+    animation: bounce 2s infinite;
+  }
+</style>
