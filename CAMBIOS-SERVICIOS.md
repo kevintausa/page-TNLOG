@@ -12,7 +12,7 @@
 - **Atributos data-service** - Ya no necesarios para modales
 
 ### 🔄 **Modificado:**
-
+ 
 #### **Services.astro:**
 - ✅ Removido import de `ServiceManagerSimple`
 - ✅ Eliminados `data-service` de todos los enlaces
