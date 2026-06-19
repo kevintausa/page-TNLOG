@@ -7,9 +7,6 @@ export default defineConfig({
   output: 'static',
   site: 'https://tn-logistics.com',
   vite: {
-    preview: {
-      allowedHosts: true,
-    },
     build: {
       rollupOptions: {
         external: [],

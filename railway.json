@@ -5,9 +5,6 @@
     "buildEnvironment": "V3"
   },
   "deploy": {
-    "startCommand": "npm start",
-    "healthcheckPath": "/",
-    "healthcheckTimeout": 300,
     "runtime": "V2",
     "numReplicas": 1,
     "limitOverride": {
